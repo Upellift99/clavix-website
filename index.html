@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clavix — A modern desktop client for Vaultwarden &amp; Bitwarden</title>
+  <meta name="description" content="Clavix is a fast, native desktop client for Vaultwarden and Bitwarden. A KeePassXC-style tree vault with drag &amp; drop, full WebAuthn/YubiKey 2FA, an embedded SSH agent, security audit and client-side encryption. Linux, macOS, Windows. Open source, GPL-3.0.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clavix — The KeePassXC experience for your Vaultwarden vault">
+  <meta property="og:description" content="Native desktop client for Vaultwarden &amp; Bitwarden: tree vault with drag &amp; drop, WebAuthn/YubiKey 2FA, embedded SSH agent, security audit. Client-side crypto, no telemetry.">
+  <meta property="og:url" content="https://clavix.org">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://clavix.org/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Clavix — desktop client for Vaultwarden and Bitwarden">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clavix — desktop client for Vaultwarden &amp; Bitwarden">
+  <meta name="twitter:description" content="Tree vault with drag &amp; drop, WebAuthn/YubiKey 2FA, embedded SSH agent, security audit. Client-side crypto, no telemetry.">
+  <meta name="twitter:image" content="https://clavix.org/assets/social-card.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://clavix.org">
+  <meta name="theme-color" content="#070b16">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-repo="Upellift99/clavix">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Alpha notice -->
+  <div class="alpha-bar">
+    <strong>Alpha software.</strong> Don't point Clavix at a vault holding secrets you can't afford to lose yet —
+    the crypto hasn't been independently audited. <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">Read the disclaimer →</a>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="container nav" aria-label="Primary">
+      <a href="#" class="logo" aria-label="Clavix home">
+        <img src="assets/clavix-logo.svg" alt="" width="30" height="30">
+        Clav<span class="accent">ix</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#compare">Compare</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/Upellift99/clavix" class="nav-ico" target="_blank" rel="noopener noreferrer" aria-label="Clavix on GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="#download" class="btn btn-primary btn-sm">Download</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>The <span class="grad">KeePassXC experience</span> for your Vaultwarden vault</h1>
+          <p class="hero-lead">
+            Clavix is a fast, native desktop client for Vaultwarden and Bitwarden — the
+            comfortable tree vault with real drag &amp; drop that the self-hosted community
+            has been missing.
+          </p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download for desktop
+            </a>
+            <a href="https://github.com/Upellift99/clavix" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              View source
+            </a>
+          </div>
+          <div class="hero-meta">
+            <span><b>Linux</b></span><span class="dot"></span>
+            <span><b>macOS</b></span><span class="dot"></span>
+            <span><b>Windows</b></span><span class="dot"></span>
+            <span>Built with <b>Tauri 2</b></span><span class="dot"></span>
+            <span><b>GPL-3.0</b></span>
+          </div>
+        </div>
+
+        <!-- App mockup: tree vault + drag & drop (Clavix's killer feature) -->
+        <figure class="mockup" aria-label="Clavix showing a tree vault with an item being dragged onto a folder">
+          <div class="mockup-bar">
+            <div class="tl"><span></span><span></span><span></span></div>
+            <div class="mockup-title">Clavix — My Vault</div>
+          </div>
+          <div class="mockup-body">
+            <aside class="mk-tree" aria-hidden="true">
+              <div class="mk-search">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+                Search vault…
+              </div>
+              <div class="mk-node"><span class="mk-caret">▾</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Personal</div>
+              <div class="mk-node child"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Banking</div>
+              <div class="mk-node child drop"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Work</div>
+              <div class="mk-node child2"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Projects</div>
+              <div class="mk-node"><span class="mk-caret">▸</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span> Acme Inc.</div>
+              <div class="mk-node child"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Shared</div>
+            </aside>
+            <div class="mk-list" aria-hidden="true">
+              <div class="mk-item dragging">
+                <span class="mk-fav" style="background:#2d6cdf">G</span>
+                <span class="mk-meta"><span class="t">GitLab — self-hosted</span><span class="s">ops@acme.dev</span></span>
+                <span class="mk-badge">drag → Work</span>
+              </div>
+              <div class="mk-item">
+                <span class="mk-fav" style="background:#e8543f">M</span>
+                <span class="mk-meta"><span class="t">Mailcow admin</span><span class="s">postmaster@acme.dev</span></span>
+              </div>
+              <div class="mk-item">
+                <span class="mk-fav" style="background:#1f8f5f">S</span>
+                <span class="mk-meta"><span class="t">SSH — build server</span><span class="s">ed25519 · used by agent</span></span>
+              </div>
+              <div class="mk-item">
+                <span class="mk-fav" style="background:#9b59b6">N</span>
+                <span class="mk-meta"><span class="t">Nextcloud</span><span class="s">2FA · TOTP</span></span>
+              </div>
+              <div class="mk-item">
+                <span class="mk-fav" style="background:#d9a23a">V</span>
+                <span class="mk-meta"><span class="t">Vaultwarden master</span><span class="s">YubiKey unlock enrolled</span></span>
+              </div>
+            </div>
+          </div>
+          <figcaption class="visually-hidden">A login item being dragged from the list onto the “Work” folder in the tree.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <div class="trust">
+      <div class="container trust-row">
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Client-side encryption</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><line x1="12" y1="2" x2="12" y2="12"/></svg> No telemetry, ever</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> Works offline</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> 100% open source</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Native &amp; lightweight</span>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Features</span>
+          <h2 class="section-title">Everything KeePassXC users miss in the official client</h2>
+          <p class="section-sub">Clavix talks to your real Vaultwarden or Bitwarden server — it just gives you a far nicer way to live in your vault.</p>
+        </div>
+        <div class="features-grid">
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="3" y2="6"/><line x1="3" y1="12" x2="3" y2="12"/><line x1="3" y1="18" x2="3" y2="18"/><line x1="8" y1="6" x2="21" y2="6"/><line x1="11" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg></div>
+            <h3>Tree vault &amp; drag &amp; drop</h3>
+            <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Full 2FA, including WebAuthn</h3>
+            <p>TOTP, YubiKey OTP and <span class="tag">WebAuthn / FIDO2</span> — Clavix drives your hardware key over CTAP2/HID itself, so security keys work even though a desktop app isn't a browser on your vault's domain.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+            <h3>Embedded SSH agent</h3>
+            <p>Exposes the Ed25519 and RSA keys from your vault over a Unix socket, so <code>ssh</code>, <code>git</code> and <code>scp</code> use them <span class="tag">without ever writing private keys to disk</span> — like Bitwarden Desktop's agent. <small style="color:var(--muted-dim)">(Linux / macOS)</small></p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="16.5" x2="12.01" y2="16.5"/></svg></div>
+            <h3>Built-in security audit</h3>
+            <p>One click runs a <span class="tag">Have I Been Pwned</span> k-anonymity breach lookup and flags <strong>reused</strong> and <strong>weak</strong> passwords locally with zxcvbn — no password or hash ever leaves your machine in the clear.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Live TOTP &amp; QR scanner</h3>
+            <p>Generates rolling TOTP codes from stored secrets (custom period, digits and hash), and <span class="tag">scans QR codes with your camera</span> to capture a new TOTP secret while editing a login.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+            <h3>Encrypted offline cache</h3>
+            <p>The whole vault is cached in <span class="tag">encrypted SQLite</span> under the user key. Re-open Clavix on a plane and your vault shows up instantly, read-only, with no server round-trip.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg></div>
+            <h3>YubiKey unlock</h3>
+            <p>After auto-lock, <span class="tag">touch a registered FIDO2 key</span> to release the cached user key instead of re-typing your master password — CTAP2 <code>hmac-secret</code>, conceptually the same as Bitwarden's PRF unlock.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg></div>
+            <h3>KeePassXC import</h3>
+            <p>Bring a KeePassXC CSV export straight in — Clavix <span class="tag">creates a folder per Group</span> on the fly, so your existing hierarchy lands intact instead of as a flat dump.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h3>System tray &amp; auto-lock</h3>
+            <p>Lives in the tray with a right-click menu, hides on close like KeePassXC, and <span class="tag">auto-locks on idle</span> — a Rust watchdog drops the in-memory session even if the window freezes. Clipboard clears after 30&nbsp;s.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="security" id="security">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Security model</span>
+          <h2 class="section-title">Your master password never leaves your device</h2>
+          <p class="section-sub">Clavix reimplements the Bitwarden crypto in Rust (it does <em>not</em> bundle the ambiguously-licensed official SDK). Everything sensitive stays local.</p>
+        </div>
+        <div class="sec-grid">
+          <div class="sec-list">
+            <div class="sec-item reveal">
+              <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><h4>Only derived values are sent</h4><p>The server sees the master-password hash for auth and never the password itself; the master key stays on the client for decryption.</p></div>
+            </div>
+            <div class="sec-item reveal">
+              <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><h4>AES-256-CBC + HMAC-SHA256</h4><p>Personal vault items are decrypted and encrypted client-side; organization keys use RSA-OAEP. PBKDF2 and Argon2id KDFs are both supported.</p></div>
+            </div>
+            <div class="sec-item reveal">
+              <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><h4>Keys zeroized on drop</h4><p>Every sensitive key derives <code>ZeroizeOnDrop</code>, wiping its bytes from memory the moment it's no longer needed.</p></div>
+            </div>
+            <div class="sec-item reveal">
+              <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><h4>Encrypted session at rest</h4><p>The refresh token on disk is itself encrypted under the user key; the access token auto-refreshes 60&nbsp;s before expiry. Files are written <code>0600</code>.</p></div>
+            </div>
+            <div class="sec-note reveal">
+              <strong>Honest status:</strong> Clavix is alpha. The cryptography has not been independently audited and a significant part of the code was AI-assisted under human review. Don't trust it with irreplaceable secrets yet — see the <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a>.
+            </div>
+          </div>
+
+          <div class="code-card reveal" aria-hidden="true">
+            <div class="ch"><div class="tl"><span></span><span></span><span></span></div><span class="fn">crypto.rs</span></div>
+<pre><span class="cm">// Master password is derived locally — the plaintext</span>
+<span class="cm">// never touches the network or the disk.</span>
+<span class="kw">let</span> master_key = <span class="fn2">pbkdf2</span>(&amp;password, &amp;email, iters);
+<span class="kw">let</span> hash       = <span class="fn2">auth_hash</span>(&amp;master_key, &amp;password);
+
+<span class="cm">// Only `hash` is sent to Vaultwarden.</span>
+client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>?;
+
+<span class="cm">// Vault items decrypt client-side…</span>
+<span class="kw">let</span> cipher = <span class="fn2">decrypt_aes_cbc_hmac</span>(&amp;enc, &amp;key)?;
+
+<span class="cm">// …and keys wipe themselves on drop.</span>
+<span class="kw">impl</span> Drop <span class="kw">for</span> MasterKey {
+    <span class="kw">fn</span> <span class="fn2">drop</span>(&amp;<span class="kw">mut</span> self) { self.0.<span class="fn2">zeroize</span>(); } <span class="ok">// ✓</span>
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="compare" id="compare">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it compares</span>
+          <h2 class="section-title">Clavix vs. the alternatives</h2>
+          <p class="section-sub">Why build another client? Because nothing else gives self-hosters a proper tree with drag &amp; drop and full write access for free.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th class="col-clavix">Clavix</th>
+                <th>Bitwarden Desktop</th>
+                <th>Keyguard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Tree vault (nested folders)</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-part" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="Partial"><line x1="5" y1="12" x2="19" y2="12"/></svg></td></tr>
+              <tr><td>Drag &amp; drop items / folders</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
+              <tr><td>Create &amp; edit items (write)</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td>Premium only</td></tr>
+              <tr><td>Embedded SSH agent</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
+              <tr><td>WebAuthn / FIDO2 login</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><td>Native (not Electron)</td><td class="col-clavix-cell"><strong>Tauri / Rust</strong></td><td>Electron</td><td>Compose</td></tr>
+              <tr><td>Self-hosted friendly</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><td>Price</td><td class="col-clavix-cell"><strong>Free · GPL-3.0</strong></td><td>Free / Premium</td><td>Free / Premium</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comp-note">Comparison reflects publicly documented features at the time of writing. Clavix is not affiliated with Bitwarden, Vaultwarden, Keyguard or KeePassXC.</p>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download" id="download">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Download</span>
+          <h2 class="section-title">Get Clavix for your platform</h2>
+          <p class="section-sub">Free and open source. Pick a build below — links always resolve to the newest release.</p>
+        </div>
+        <p class="dl-version" id="dl-version">Latest release: <b id="dl-tag">loading…</b></p>
+        <div class="dl-grid">
+
+          <article class="dl-card reveal">
+            <div class="dl-os">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.5 2c-1.6 0-2.8 1.3-2.8 3.4 0 .6.1 1.2.3 1.7-.6.5-1.2 1.4-1.7 2.6-.5 1.1-1.4 1.8-2.2 2.7-.8.9-1.3 1.8-1 2.8.2.6.7.9 1.2 1-.1.4 0 .8.3 1.1.4.5 1.1.6 1.7.5.3.5.8.9 1.6 1.1 1.5.4 2.6.4 4.2 0 .8-.2 1.3-.6 1.6-1.1.6.1 1.3 0 1.7-.5.3-.3.4-.7.3-1.1.5-.1 1-.4 1.2-1 .3-1-.2-1.9-1-2.8-.8-.9-1.7-1.6-2.2-2.7-.5-1.2-1.1-2.1-1.7-2.6.2-.5.3-1.1.3-1.7C15.3 3.3 14.1 2 12.5 2z"/></svg>
+              <h3>Linux</h3>
+            </div>
+            <div class="dl-links" data-os="linux">
+              <a data-ext=".AppImage" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">AppImage <span class="fmt">portable</span></a>
+              <a data-ext=".deb" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Debian / Ubuntu <span class="fmt">.deb</span></a>
+              <a data-ext=".rpm" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Fedora / RHEL <span class="fmt">.rpm</span></a>
+            </div>
+          </article>
+
+          <article class="dl-card reveal">
+            <div class="dl-os">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 14.25 3.51 5.88 9.05 5.6c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.51 4.59zM12.03 5.55C11.88 3.32 13.69 1.48 15.77 1.3c.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+              <h3>macOS</h3>
+            </div>
+            <div class="dl-links" data-os="macos">
+              <a data-ext=".dmg" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Universal disk image <span class="fmt">.dmg</span></a>
+              <a data-ext=".app.tar.gz" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">App bundle <span class="fmt">.app.tar.gz</span></a>
+            </div>
+            <p class="dl-foot" style="margin-top:.6rem;font-size:.78rem;text-align:left;color:var(--muted-dim)">Not yet code-signed — right-click → Open on first launch.</p>
+          </article>
+
+          <article class="dl-card reveal">
+            <div class="dl-os">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.1 10.4 4v7.5H3zM10.4 12.5V20L3 18.9v-6.4zM11.3 3.9 21 2.5v9H11.3zM21 12.5v9l-9.7-1.4v-7.6z"/></svg>
+              <h3>Windows</h3>
+            </div>
+            <div class="dl-links" data-os="windows">
+              <a data-ext="-setup.exe" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Installer <span class="fmt">.exe</span></a>
+              <a data-ext=".msi" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">MSI package <span class="fmt">.msi</span></a>
+            </div>
+            <p class="dl-foot" style="margin-top:.6rem;font-size:.78rem;text-align:left;color:var(--muted-dim)">Not yet code-signed — SmartScreen may warn on first run.</p>
+          </article>
+
+        </div>
+        <p class="dl-foot">
+          <span class="dl-build"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg> Or build from source</span>
+          — see the <a href="https://github.com/Upellift99/clavix#development-requirements" target="_blank" rel="noopener noreferrer">development guide</a>, or browse <a href="https://github.com/Upellift99/clavix/releases" target="_blank" rel="noopener noreferrer">all releases</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-q">What is Clavix? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>Clavix is a native desktop client for <strong>Vaultwarden</strong> and <strong>Bitwarden</strong>. It connects to your existing server and gives you a KeePassXC-style hierarchical vault with drag &amp; drop, plus features the official client lacks — an embedded SSH agent, a security audit, YubiKey unlock and more.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Does it work with my self-hosted Vaultwarden? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>Yes — that's the whole point. You enter your own server URL at login. It also works against bitwarden.com. Clavix never sends data anywhere except your configured server (and Have I Been Pwned's k-anonymity API, hash-prefixed, when you run the audit).</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Is it safe to use with my real vault? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>Clavix is <strong>alpha</strong>. The cryptography hasn't been independently audited and part of the code was written with AI assistance under human review. Treat it as experimental — test against a throwaway vault first and read the <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a> before trusting it with real secrets.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Which platforms are supported? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>Linux (AppImage, .deb, .rpm), macOS (universal .dmg) and Windows (.exe / .msi). The embedded SSH agent is currently Unix-only (Linux/macOS); Windows named-pipe support is on the roadmap.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Does Clavix use the official Bitwarden SDK? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>No. The Bitwarden SDK has an ambiguous license, so Clavix reimplements the crypto in-project under GPL-3.0, inspired by <a href="https://github.com/doy/rbw" target="_blank" rel="noopener noreferrer">rbw</a>. The frontend is Svelte 5 + TypeScript; the backend is Rust on Tauri 2.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Is it really free? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>Yes — Clavix is free and open source under the GPL-3.0-or-later license, with no premium tier. Write access, the SSH agent and the security audit are all included. Contributions are welcome on <a href="https://github.com/Upellift99/clavix" target="_blank" rel="noopener noreferrer">GitHub</a>.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Bring your Vaultwarden vault home</h2>
+          <p>A comfortable tree, real drag &amp; drop, and the keys that matter — on Linux, macOS and Windows.</p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Clavix
+            </a>
+            <a href="https://github.com/Upellift99/clavix" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" aria-label="Clavix home"><img src="assets/clavix-logo.svg" alt="" width="30" height="30"> Clav<span class="accent">ix</span></a>
+          <p>A modern desktop client for Vaultwarden &amp; Bitwarden: the features of Bitwarden with the simplicity of KeePassXC.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/Upellift99/clavix" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://github.com/Upellift99/clavix/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
+            <li><a href="https://github.com/Upellift99/clavix/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Changelog</a></li>
+            <li><a href="https://github.com/Upellift99/clavix/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="https://github.com/Upellift99/clavix/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 License</a></li>
+            <li><a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Clavix contributors. Free software, GPL-3.0-or-later.</p>
+        <p class="priv">No tracking. No analytics. This page makes one request — to GitHub, for the latest version.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
