@@ -377,6 +377,10 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
             <div class="faq-a"><p>Yes — that's the whole point. You enter your own server URL at login. It also works against bitwarden.com. Clavix never sends data anywhere except your configured server (and Have I Been Pwned's k-anonymity API, hash-prefixed, when you run the audit).</p></div>
           </details>
           <details class="faq-item">
+            <summary class="faq-q">My SSH keys don't show up — why? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>SSH keys are vault items of type <em>SSH key</em>, and Vaultwarden only serves that type when the experimental feature flag is enabled. On a recent Vaultwarden, set <code>EXPERIMENTAL_CLIENT_FEATURE_FLAGS=ssh-key-vault-item,ssh-agent</code> and restart it. Then sync in Clavix — your keys appear under the <em>SSH key</em> type filter, and the embedded agent can serve the Ed25519 / RSA ones. (Official bitwarden.com already supports the type.)</p></div>
+          </details>
+          <details class="faq-item">
             <summary class="faq-q">Is it safe to use with my real vault? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
             <div class="faq-a"><p>Clavix is <strong>alpha</strong>. The cryptography hasn't been independently audited and part of the code was written with AI assistance under human review. Treat it as experimental — test against a throwaway vault first and read the <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a> before trusting it with real secrets.</p></div>
           </details>
