@@ -161,6 +161,18 @@
         <div class="features-grid">
 
           <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.9" y1="4.9" x2="9.2" y2="9.2"/><line x1="14.8" y1="14.8" x2="19.1" y2="19.1"/><line x1="14.8" y1="9.2" x2="19.1" y2="4.9"/><line x1="4.9" y1="19.1" x2="9.2" y2="14.8"/></svg></div>
+            <h3>Encrypted backups you can actually open</h3>
+            <p>Export your whole vault — <strong>every item type</strong>, not just the logins and notes a CSV can carry — sealed under a password you choose (<span class="tag">Argon2id</span>). Re-import it later, or open it <strong>read-only with no server and no account at all</strong>: the file is all you need. A backup nobody can restore isn't a backup.</p>
+          </article>
+
+          <article class="fcard reveal">
+            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="9"/><line x1="18" y1="20" x2="18" y2="4"/></svg></div>
+            <h3>Password strength, where you choose one</h3>
+            <p>The generator shows <strong>exact entropy in bits</strong> — untick a character class and the number drops, which a 0–5 guessability score never would. The editor and item view show a zxcvbn score instead, computed in Rust: the item view can rate a password that is <span class="tag">still masked</span>, and the editor can never disagree with the security audit.</p>
+          </article>
+
+          <article class="fcard reveal">
             <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="3" y2="6"/><line x1="3" y1="12" x2="3" y2="12"/><line x1="3" y1="18" x2="3" y2="18"/><line x1="8" y1="6" x2="21" y2="6"/><line x1="11" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg></div>
             <h3>Tree vault &amp; drag &amp; drop</h3>
             <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server.</p>
@@ -193,7 +205,7 @@
           <article class="fcard reveal">
             <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
             <h3>Encrypted offline cache</h3>
-            <p>The whole vault is cached in <span class="tag">encrypted SQLite</span> under the user key. Re-open Clavix on a plane and your vault shows up instantly, read-only, with no server round-trip.</p>
+            <p>The whole vault is cached in <span class="tag">encrypted SQLite</span> under the user key, so unlocking paints instantly with no server round-trip. When your server is unreachable, the unlock <strong>falls back to that cache</strong> and opens the vault read-only instead of leaving you stuck.</p>
           </article>
 
           <article class="fcard reveal">
@@ -375,6 +387,14 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <details class="faq-item">
             <summary class="faq-q">Does it work with my self-hosted Vaultwarden? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
             <div class="faq-a"><p>Yes — that's the whole point. You enter your own server URL at login. Self-hosted <strong>Bitwarden</strong> works too (same single-domain layout). Bitwarden's <strong>cloud</strong> (bitwarden.com / bitwarden.eu) is supported as well: pick your region from the <strong>Server</strong> menu on the login screen — Clavix targets the cloud's separate <code>api.</code> / <code>identity.</code> endpoints for you. Clavix never sends data anywhere except your configured server (and Have I Been Pwned's k-anonymity API, hash-prefixed, when you run the audit).</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">What happens to my vault if my server dies? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>Two answers, depending on how bad it is. If the server is merely <strong>unreachable</strong>, unlocking with your master password still works: Clavix derives the key locally and opens the encrypted cache read-only. If the server — or the account — is <strong>gone for good</strong>, open an encrypted backup instead: <em>Export the vault → Encrypted JSON</em> gives you a file sealed under a password of your choosing, and Clavix reopens it on any machine with <strong>no server, no account and no stored session</strong>. Both modes are clearly banded as read-only, so you always know you're looking at a copy.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Can Bitwarden read a Clavix encrypted backup? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>No — the encrypted format is Clavix's own, and it's the one to use for <strong>backups</strong>, because Clavix can reopen it with nothing but the file and its password. For <strong>migrating to another password manager</strong>, use the Bitwarden-format CSV export instead, which any Bitwarden-compatible client imports. It's plaintext on disk and carries only logins and notes, so treat the file accordingly and delete it once the migration is done.</p></div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">My SSH keys don't show up — why? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
