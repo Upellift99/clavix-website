@@ -68,7 +68,7 @@
     var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') + ' ' + navigator.userAgent;
     if (/android|iphone|ipad|ipod/i.test(p)) return null; // phones get no desktop guess
     if (/win/i.test(p)) return 'windows';
-    if (/mac/i.test(p)) return 'macos';
+    if (/mac/i.test(p)) return navigator.maxTouchPoints > 1 ? null : 'macos'; // iPadOS reports a Mac
     if (/linux|x11|cros/i.test(p)) return 'linux';
     return null;
   }
@@ -104,8 +104,14 @@
         // that way, so there is no dead "loading…" text to clean up.
         if (tagEl && rel.tag_name) {
           tagEl.textContent = rel.tag_name;
-          tagEl.title = 'Released ' + (rel.published_at || '').slice(0, 10);
           if (rel.html_url) tagEl.href = rel.html_url;
+          var prefix = document.getElementById('dl-prefix');
+          if (prefix) prefix.hidden = false;
+          var dateEl = document.getElementById('dl-date');
+          var when = rel.published_at && new Date(rel.published_at);
+          if (dateEl && when && !isNaN(when)) {
+            dateEl.textContent = ' · released ' + when.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+          }
         }
         var assets = rel.assets || [];
         // For each download link, find the matching asset by extension and
@@ -116,6 +122,8 @@
             return as.name.slice(-ext.length).toLowerCase() === ext.toLowerCase();
           });
           if (match && match.browser_download_url) a.href = match.browser_download_url;
+          var sizeEl = a.querySelector('.dl-size');
+          if (match && sizeEl && match.size) sizeEl.textContent = (match.size / 1048576).toFixed(0) + ' MB';
         });
         // List the SHA-256 GitHub computed for each asset, so a download can
         // be checked without leaving the page.

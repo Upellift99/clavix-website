@@ -93,49 +93,37 @@
         </div>
 
         <!-- App mockup: tree vault + drag & drop (Clavix's killer feature) -->
-        <figure class="mockup" aria-label="Clavix showing a tree vault with an item being dragged onto a folder">
+        <figure class="mockup" aria-label="Clavix: an item is dragged from Inbox onto the Work folder, and its header path changes to Personal / Work">
           <div class="mockup-bar">
             <div class="tl"><span></span><span></span><span></span></div>
             <div class="mockup-title">Clavix — My Vault</div>
           </div>
-          <div class="mockup-body">
-            <aside class="mk-tree" aria-hidden="true">
-              <div class="mk-search">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-                Search vault…
+            <div class="flead-demo" aria-hidden="true">
+              <div class="fdemo">
+                <div class="fdemo-tree">
+                  <div class="fdemo-node"><span class="mk-caret">▾</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal</div>
+                  <div class="fdemo-node child is-sel"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Inbox</div>
+                  <div class="fdemo-node child fdemo-target"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Work</div>
+                  <div class="fdemo-node child"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Projects</div>
+                  <div class="fdemo-node"><span class="mk-caret">▸</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc.</div>
+                </div>
+                <div class="fdemo-list">
+                  <div class="fdemo-slot"></div>
+                  <div class="fdemo-row"><span class="mk-fav" style="background:#c94431">M</span> Mailcow admin</div>
+                  <div class="fdemo-row"><span class="mk-fav" style="background:#0072b1">N</span> Nextcloud</div>
+                  <div class="fdemo-row"><span class="mk-fav" style="background:#1b7a51">S</span> SSH — build server</div>
+                </div>
+                <div class="fdemo-chip"><span class="mk-fav" style="background:#2d6cdf">G</span> <span class="fdemo-chip-t">GitLab — self-hosted</span><svg class="fdemo-cursor" width="18" height="18" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z" fill="#eef2fb" stroke="#070b16" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
               </div>
-              <div class="mk-node"><span class="mk-caret">▾</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Personal</div>
-              <div class="mk-node child"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Banking</div>
-              <div class="mk-node child drop"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Work</div>
-              <div class="mk-node child2"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Projects</div>
-              <div class="mk-node"><span class="mk-caret">▸</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span> Acme Inc.</div>
-              <div class="mk-node child"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span> Shared</div>
-            </aside>
-            <div class="mk-list" aria-hidden="true">
-              <div class="mk-item dragging">
-                <span class="mk-fav" style="background:#2d6cdf">G</span>
-                <span class="mk-meta"><span class="t">GitLab — self-hosted</span><span class="s">ops@acme.dev</span></span>
-                <span class="mk-badge"><span class="mk-badge-verb">drag </span>→ Work</span>
+              <div class="fd-head">
+                <span class="mk-fav fd-fav">G</span>
+                <div class="fd-meta">
+                  <span class="fd-title">GitLab — self-hosted</span>
+                  <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> <span class="fd-swap"><span class="fd-from">Personal <i>/</i> Inbox</span><span class="fd-to">Personal <i>/</i> Work</span></span></span>
+                </div>
               </div>
-              <div class="mk-item">
-                <span class="mk-fav" style="background:#c94431">M</span>
-                <span class="mk-meta"><span class="t">Mailcow admin</span><span class="s">postmaster@acme.dev</span></span>
-              </div>
-              <div class="mk-item">
-                <span class="mk-fav" style="background:#1b7a51">S</span>
-                <span class="mk-meta"><span class="t">SSH — build server</span><span class="s">ed25519 · used by agent</span></span>
-              </div>
-              <div class="mk-item">
-                <span class="mk-fav" style="background:#0072b1">N</span>
-                <span class="mk-meta"><span class="t">Nextcloud</span><span class="s">2FA · TOTP</span></span>
-              </div>
-              <div class="mk-item">
-                <span class="mk-fav" style="background:#d9a23a;color:#2a1d05">V</span>
-                <span class="mk-meta"><span class="t">Vaultwarden master</span><span class="s">YubiKey unlock enrolled</span></span>
-              </div>
-            </div>
-          </div>
-          <figcaption class="visually-hidden">A login item being dragged from the list onto the “Work” folder in the tree.</figcaption>
+                        </div>
+          <figcaption class="visually-hidden">A login item is dragged from the Inbox list onto the “Work” folder in the tree; its header then reads Personal / Work.</figcaption>
         </figure>
       </div>
     </section>
@@ -143,12 +131,11 @@
     <!-- Trust strip -->
     <div class="trust">
       <div class="container trust-row">
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Client-side encryption</span>
         <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><line x1="12" y1="2" x2="12" y2="12"/></svg> No telemetry, ever</span>
         <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> Opens offline, read-only</span>
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> 100% open source</span>
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Native &amp; lightweight</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg> Bitwarden crypto reimplemented in Rust</span>
       </div>
+    </div>
     </div>
 
     <!-- Features -->
@@ -165,30 +152,20 @@
             <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server.</p>
             <p>Open an item and its header <strong>spells out where it's filed</strong>: the full folder path, or one line per collection for a shared item. Two entries with the same name never get mixed up.</p>
           </div>
-          <div class="flead-demo" aria-hidden="true">
-            <div class="fdemo">
-              <div class="fdemo-tree">
-                <div class="fdemo-node"><span class="mk-caret">▾</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal</div>
-                <div class="fdemo-node child is-sel"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Inbox</div>
-                <div class="fdemo-node child fdemo-target"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Work</div>
-                <div class="fdemo-node child"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Projects</div>
-                <div class="fdemo-node"><span class="mk-caret">▸</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc.</div>
-              </div>
-              <div class="fdemo-list">
-                <div class="fdemo-slot"></div>
-                <div class="fdemo-row"><span class="mk-fav" style="background:#c94431">M</span> Mailcow admin</div>
-                <div class="fdemo-row"><span class="mk-fav" style="background:#0072b1">N</span> Nextcloud</div>
-              </div>
-              <div class="fdemo-chip"><span class="mk-fav" style="background:#2d6cdf">G</span> <span class="fdemo-chip-t">GitLab — self-hosted</span><svg class="fdemo-cursor" width="18" height="18" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z" fill="#eef2fb" stroke="#070b16" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div class="frename" aria-hidden="true">
+            <div class="fr-pair">
+              <div class="fr-col"><span class="fr-label">Before</span><div class="fdemo-node"><span class="mk-caret">▾</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal</div><div class="fdemo-node child"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Work</div><div class="fdemo-node child2"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Projects</div><div class="fdemo-node child2"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Infra</div></div>
+              <svg class="fr-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <div class="fr-col"><span class="fr-label">Rename “Work” to “Clients”</span><div class="fdemo-node"><span class="mk-caret">▾</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal</div><div class="fdemo-node child is-new"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Clients</div><div class="fdemo-node child2 is-moved"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Projects</div><div class="fdemo-node child2 is-moved"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Infra</div></div>
             </div>
             <div class="fd-head">
               <span class="mk-fav fd-fav">G</span>
               <div class="fd-meta">
                 <span class="fd-title">GitLab — self-hosted</span>
-                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> <span class="fd-swap"><span class="fd-from">Personal <i>/</i> Inbox</span><span class="fd-to">Personal <i>/</i> Work</span></span></span>
+                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal <i>/</i> Clients <i>/</i> Projects</span>
               </div>
             </div>
-            <p class="fd-cap">Drop it on a folder: the move syncs to your server, and the item's header shows where it now lives.</p>
+            <p class="fd-cap">Sub-folders follow the rename on the server, and every item's header shows its new path.</p>
           </div>
         </article>
 
@@ -286,23 +263,28 @@
             </div>
           </div>
 
-          <div class="code-card reveal" aria-hidden="true">
-            <div class="ch"><div class="tl"><span></span><span></span><span></span></div><span class="fn">crypto.rs</span><span class="illus">illustrative excerpt</span></div>
-<pre><span class="cm">// Master password is derived locally — the plaintext</span>
-<span class="cm">// never touches the network or the disk.</span>
-<span class="kw">let</span> master_key = <span class="fn2">pbkdf2</span>(&amp;password, &amp;email, iters);
-<span class="kw">let</span> hash       = <span class="fn2">auth_hash</span>(&amp;master_key, &amp;password);
+          <figure class="code-card reveal">
+            <figcaption class="ch"><div class="tl" aria-hidden="true"><span></span><span></span><span></span></div><a class="fn" href="https://github.com/Upellift99/clavix/blob/6a37ef8cea1a77c1f44a7fc50f6592c8c04c8522/src-tauri/core/src/crypto.rs#L179-L209" target="_blank" rel="noopener noreferrer">core/src/crypto.rs · L179–209</a><span class="illus">real code, trimmed</span></figcaption>
+<pre><code>#[<span class="fn2">derive</span>(Zeroize, ZeroizeOnDrop, Clone)]
+<span class="kw">pub struct</span> MasterKey([<span class="kw">u8</span>; 32]);
 
-<span class="cm">// Only `hash` is sent to Vaultwarden.</span>
-client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>?;
+<span class="kw">pub fn</span> <span class="fn2">derive_master_key</span>(password: &amp;SecretString,
+    email: &amp;<span class="kw">str</span>, kdf: KdfType, <span class="cm">/* … */</span>)
+    -&gt; Result&lt;MasterKey&gt; {
+    <span class="kw">let</span> email_lower = email.<span class="fn2">trim</span>().<span class="fn2">to_ascii_lowercase</span>();
 
-<span class="cm">// Vault items decrypt client-side…</span>
-<span class="kw">let</span> cipher = <span class="fn2">decrypt_aes_cbc_hmac</span>(&amp;enc, &amp;key)?;
-
-<span class="cm">// …and keys wipe themselves on drop.</span>
-#[<span class="fn2">derive</span>(ZeroizeOnDrop)]
-<span class="kw">struct</span> MasterKey([<span class="kw">u8</span>; 32]); <span class="ok">// ✓ wiped when dropped</span></pre>
-          </div>
+    <span class="cm">// Bitwarden salts PBKDF2 with the raw e-mail and</span>
+    <span class="cm">// Argon2id with its SHA-256 digest.</span>
+    <span class="kw">let</span> salt: &amp;[<span class="kw">u8</span>] = <span class="kw">match</span> kdf {
+        KdfType::Pbkdf2 =&gt; email_lower.<span class="fn2">as_bytes</span>(),
+        KdfType::Argon2id =&gt; {
+            argon_salt = Sha256::<span class="fn2">digest</span>(email_lower.<span class="fn2">as_bytes</span>()).<span class="fn2">into</span>();
+            &amp;argon_salt
+        }
+    };
+    <span class="cm">// … refuses PBKDF2/Argon2id parameters below the floors</span>
+}</code></pre>
+          </figure>
         </div>
       </div>
     </section>
@@ -317,29 +299,32 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
         </div>
         <div class="table-wrap reveal">
           <table>
-            <caption class="visually-hidden">Feature comparison of Clavix, Bitwarden and Keyguard, including where Clavix falls short</caption>
+            <caption class="visually-hidden">Feature comparison of Clavix, Bitwarden, Keyguard and KeePassXC, including where Clavix falls short</caption>
             <thead>
               <tr>
                 <td></td>
                 <th scope="col" class="col-clavix">Clavix</th>
                 <th scope="col">Bitwarden</th>
                 <th scope="col">Keyguard</th>
+                <th scope="col">KeePassXC</th>
               </tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Tree vault (nested folders)</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-part" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="Partial"><line x1="5" y1="12" x2="19" y2="12"/></svg></td></tr>
-              <tr><th scope="row">Drag &amp; drop items / folders</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
-              <tr><th scope="row">Create &amp; edit items (write)</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td>Premium only</td></tr>
-              <tr><th scope="row">Embedded SSH agent</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
-              <tr><th scope="row">Native (not Electron)</th><td class="col-clavix-cell"><strong>Tauri / Rust</strong></td><td>Electron</td><td>Compose</td></tr>
-              <tr><th scope="row">Independent security audit</th><td class="col-clavix-cell is-lose">Not yet</td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><span class="ic-unk" title="Not documented">?<span class="visually-hidden"> (not documented)</span></span></td></tr>
-              <tr><th scope="row">Signed release builds</th><td class="col-clavix-cell is-lose">Not yet</td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><span class="ic-unk" title="Not documented">?<span class="visually-hidden"> (not documented)</span></span></td></tr>
-              <tr><th scope="row">Mobile apps</th><td class="col-clavix-cell is-lose">Desktop only</td><td>iOS &amp; Android</td><td>Android</td></tr>
-              <tr><th scope="row">Browser autofill</th><td class="col-clavix-cell is-lose">No</td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td>Android only</td></tr>
-              <tr><th scope="row">Price</th><td class="col-clavix-cell"><strong>Free · GPL-3.0</strong></td><td>Free / Premium</td><td>Free / Premium</td></tr>
+              <tr><th scope="row">Syncs with Vaultwarden / Bitwarden</th><td data-label="Clavix" class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Bitwarden"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Keyguard"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="KeePassXC"><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="cell-note">File-based</span></td></tr>
+              <tr><th scope="row">Tree vault (nested folders)</th><td data-label="Clavix" class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Bitwarden"><svg class="ic-part" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="Partial"><line x1="5" y1="12" x2="19" y2="12"/></svg><sup class="fn-ref"><a href="#cmp-fn1" aria-label="Note 1">1</a></sup></td><td data-label="Keyguard"><svg class="ic-part" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="Partial"><line x1="5" y1="12" x2="19" y2="12"/></svg></td><td data-label="KeePassXC"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Drag &amp; drop items / folders</th><td data-label="Clavix" class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Bitwarden"><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td data-label="Keyguard"><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td data-label="KeePassXC"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Create &amp; edit items (write)</th><td data-label="Clavix" class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Bitwarden"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Keyguard">Premium only</td><td data-label="KeePassXC"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Embedded SSH agent</th><td data-label="Clavix" class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Bitwarden"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Keyguard"><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td data-label="KeePassXC">Via the system agent</td></tr>
+              <tr><th scope="row">Native (not Electron)</th><td data-label="Clavix" class="col-clavix-cell"><strong>Tauri / Rust</strong></td><td data-label="Bitwarden">Electron</td><td data-label="Keyguard">Compose</td><td data-label="KeePassXC">Qt / C++</td></tr>
+              <tr><th scope="row">Independent security audit</th><td data-label="Clavix" class="col-clavix-cell is-lose">Not yet</td><td data-label="Bitwarden"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Keyguard"><span class="ic-unk" title="Not documented">?<span class="visually-hidden"> (not documented)</span></span></td><td data-label="KeePassXC"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg><sup class="fn-ref"><a href="#cmp-fn2" aria-label="Note 2">2</a></sup></td></tr>
+              <tr><th scope="row">Signed release builds</th><td data-label="Clavix" class="col-clavix-cell is-lose">Not yet</td><td data-label="Bitwarden"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Keyguard"><span class="ic-unk" title="Not documented">?<span class="visually-hidden"> (not documented)</span></span></td><td data-label="KeePassXC"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Mobile apps</th><td data-label="Clavix" class="col-clavix-cell is-lose">Desktop only</td><td data-label="Bitwarden">iOS &amp; Android</td><td data-label="Keyguard">Android</td><td data-label="KeePassXC">Third-party apps</td></tr>
+              <tr><th scope="row">Browser autofill</th><td data-label="Clavix" class="col-clavix-cell is-lose">No</td><td data-label="Bitwarden"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td data-label="Keyguard">Android only</td><td data-label="KeePassXC"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Price</th><td data-label="Clavix" class="col-clavix-cell"><strong>Free · GPL-3.0</strong></td><td data-label="Bitwarden">Free / Premium</td><td data-label="Keyguard">Free / Premium</td><td data-label="KeePassXC">Free · GPL</td></tr>
             </tbody>
           </table>
         </div>
+        <p class="comp-note" id="cmp-fn1"><sup>1</sup> Bitwarden nests folders named “Parent/Child”, but has no drag &amp; drop to move items or folders.<br><sup>2</sup> KeePassXC 2.7.4, reviewed by an independent consultant in 2023 (<a href="https://keepassxc.org/blog/2023-04-15-audit-report/" target="_blank" rel="noopener noreferrer">report</a>). KeePassXC keeps a local file; it doesn't talk to a Vaultwarden server.</p>
         <p class="comp-note">As of October 2026, from each project's public documentation. Amber marks where Clavix falls short; a dash means partial support; “?” means the project doesn't document it. Clavix is not affiliated with Bitwarden, Vaultwarden, Keyguard or KeePassXC.</p>
       </div>
     </section>
@@ -352,7 +337,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <h2 class="section-title">Get Clavix for your platform</h2>
           <p class="section-sub">Free and open source. One recommended build per system; links always point to the newest release.</p>
         </div>
-        <p class="dl-version" id="dl-version">Latest release: <a id="dl-tag" href="https://github.com/Upellift99/clavix/releases/latest">on GitHub</a> <span class="chip-alpha">alpha</span></p>
+        <p class="dl-version" id="dl-version"><span id="dl-prefix" hidden>Latest release: </span><a id="dl-tag" href="https://github.com/Upellift99/clavix/releases/latest">See the latest release on GitHub</a><span id="dl-date"></span> <span class="chip-alpha">alpha</span></p>
         <p class="dl-first"><strong>First run:</strong> sign in with a test account on your server and try Clavix there. Move real items over once you trust it.</p>
         <div class="dl-grid">
 
@@ -363,8 +348,9 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
               <span class="dl-yours" hidden>Your system</span>
             </div>
             <div class="dl-links" data-os="linux">
-              <a class="dl-main" data-ext=".AppImage" href="https://github.com/Upellift99/clavix/releases/latest">AppImage <span class="fmt">x86_64 · any distro</span></a>
-              <p class="dl-alt">Also as <a data-ext=".deb" href="https://github.com/Upellift99/clavix/releases/latest" title="Debian / Ubuntu">.deb</a> for Debian / Ubuntu or <a data-ext=".rpm" href="https://github.com/Upellift99/clavix/releases/latest" title="Fedora / RHEL">.rpm</a> for Fedora / RHEL.</p>
+              <a class="dl-main" data-ext=".AppImage" href="https://github.com/Upellift99/clavix/releases/latest"><svg class="dl-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="dl-name">AppImage</span> <span class="fmt"><span class="dl-size"></span>x86_64</span></a>
+              <p class="dl-alt">Runs on any x86_64 distro. Also as <a data-ext=".deb" href="https://github.com/Upellift99/clavix/releases/latest" title="Debian / Ubuntu">.deb</a> for Debian / Ubuntu or <a data-ext=".rpm" href="https://github.com/Upellift99/clavix/releases/latest" title="Fedora / RHEL">.rpm</a> for Fedora / RHEL.</p>
+            <p class="dl-note">Not yet signed. Make the AppImage executable before the first run: <code>chmod +x clavix_*.AppImage</code>.</p>
             </div>
           </article>
 
@@ -375,8 +361,8 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
               <span class="dl-yours" hidden>Your system</span>
             </div>
             <div class="dl-links" data-os="macos">
-              <a class="dl-main" data-ext=".dmg" href="https://github.com/Upellift99/clavix/releases/latest">Disk image <span class="fmt">Apple silicon + Intel</span></a>
-              <p class="dl-alt">Also as a bare <a data-ext=".app.tar.gz" href="https://github.com/Upellift99/clavix/releases/latest" title="App bundle">.app.tar.gz</a> bundle.</p>
+              <a class="dl-main" data-ext=".dmg" href="https://github.com/Upellift99/clavix/releases/latest"><svg class="dl-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="dl-name">Disk image</span> <span class="fmt"><span class="dl-size"></span>universal</span></a>
+              <p class="dl-alt">One build for Apple silicon and Intel. Also as a bare <a data-ext=".app.tar.gz" href="https://github.com/Upellift99/clavix/releases/latest" title="App bundle">.app.tar.gz</a> bundle.</p>
             </div>
             <p class="dl-note">Not yet signed or notarized by Apple, so macOS blocks the first launch: open <em>System Settings → Privacy &amp; Security</em> and click <em>Open Anyway</em>.</p>
           </article>
@@ -388,7 +374,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
               <span class="dl-yours" hidden>Your system</span>
             </div>
             <div class="dl-links" data-os="windows">
-              <a class="dl-main" data-ext="-setup.exe" href="https://github.com/Upellift99/clavix/releases/latest">Installer <span class="fmt">x64 · setup .exe</span></a>
+              <a class="dl-main" data-ext="-setup.exe" href="https://github.com/Upellift99/clavix/releases/latest"><svg class="dl-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="dl-name">Installer</span> <span class="fmt"><span class="dl-size"></span>x64</span></a>
               <p class="dl-alt">Also as an <a data-ext=".msi" href="https://github.com/Upellift99/clavix/releases/latest" title="MSI package">.msi</a> package for managed installs.</p>
             </div>
             <p class="dl-note">Not yet code-signed — SmartScreen may warn on first run.</p>
@@ -498,6 +484,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#security">Security</a></li>
+            <li><a href="#compare">Compare</a></li>
             <li><a href="#download">Download</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>

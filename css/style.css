@@ -303,6 +303,19 @@ section { padding: 6rem 0; position: relative; }
 /* Lead demo: one item dragged from the list onto a folder, then its header
    path updates. The page's single authored motion; paused off-screen. */
 .flead-demo { --ease: cubic-bezier(0.16, 1, 0.3, 1); }
+.mockup .fdemo { --tree: 170px; border: 0; border-radius: 0; background: transparent; font-size: 0.82rem; }
+.mockup .fdemo-tree { border-right: 1px solid var(--border); padding-right: 8px; }
+.mockup .flead-demo .fd-head { margin: 0 12px 12px; }
+
+/* Lead card: a folder rename and the sub-folders following it */
+.frename { display: flex; flex-direction: column; gap: 0.8rem; }
+.fr-pair { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--text-soft); }
+.fr-col { background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.6rem 0.5rem; display: flex; flex-direction: column; gap: 2px; }
+.fr-label { font-size: 0.72rem; color: var(--muted); padding: 0 0.5rem 0.35rem; }
+.fr-arrow { color: var(--brand-light); }
+.fdemo-node.child2 { padding-left: 2.5rem; }
+.fdemo-node.is-new { background: rgba(23,93,220,0.2); color: #fff; }
+.fdemo-node.is-moved { color: var(--text); }
 .fdemo {
   --tree: 150px;
   position: relative; display: grid; grid-template-columns: var(--tree) minmax(0, 1fr); gap: 12px;
@@ -397,7 +410,9 @@ section { padding: 6rem 0; position: relative; }
 .sec-docs { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; margin-top: 0.7rem; }
 .sec-docs a { color: #f2d9a6; text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(242,217,166,0.45); }
 .sec-docs a:hover { color: #fff; }
-.code-card .ch .illus { margin-left: auto; font-size: 0.72rem; color: var(--muted); font-style: italic; }
+.code-card { margin: 0; }
+.code-card .ch .illus { margin-left: auto; font-size: 0.72rem; color: var(--muted); }
+.code-card .ch a.fn { color: var(--brand-lighter); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(143,182,246,0.4); }
 .code-card {
   background: #06090f; border: 1px solid var(--border-strong); border-radius: var(--radius);
   overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.8);
@@ -415,7 +430,7 @@ section { padding: 6rem 0; position: relative; }
 
 /* --- Comparison --- */
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 560px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 700px; }
 thead td { border-bottom: 1px solid var(--border); }
 thead th { padding: 1.1rem 1.3rem; text-align: left; font-weight: 600; color: var(--text-soft); border-bottom: 1px solid var(--border); }
 thead th.col-clavix { color: var(--brand-light); }
@@ -430,6 +445,10 @@ tbody td strong { color: #fff; }
 .ic-no { color: var(--muted-dim); }
 .ic-part { color: var(--text-soft); }
 .ic-unk { color: var(--muted); font-weight: 600; }
+td svg { display: inline-block; vertical-align: middle; }
+.fn-ref { font-size: 0.7rem; margin-left: 0.2rem; vertical-align: super; }
+.fn-ref a { color: var(--muted); }
+.cell-note { margin-left: 0.4rem; font-size: 0.82rem; color: var(--muted); }
 .col-clavix-cell.is-lose { color: #f2d9a6; font-weight: 600; background: rgba(217,162,58,0.08); }
 .comp-note { text-align: center; max-width: 72ch; margin: 1.3rem auto 0; font-size: 0.84rem; color: var(--muted); }
 
@@ -481,6 +500,10 @@ tbody td strong { color: #fff; }
   transition: background .18s, border-color .18s, color .18s;
 }
 .dl-links .dl-main:hover { background: rgba(23,93,220,0.24); border-color: var(--brand-light); color: #fff; }
+.dl-links .dl-main .dl-ico { flex-shrink: 0; color: var(--brand-light); }
+.dl-links .dl-main .dl-name { margin-right: auto; }
+.dl-size:not(:empty)::after { content: ' · '; }
+.dl-links .dl-main .fmt { white-space: nowrap; }
 .dl-links .dl-main .fmt { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; color: var(--brand-lighter); }
 .dl-alt { font-size: 0.86rem; color: var(--muted); line-height: 1.55; }
 .dl-alt a { font-family: var(--font-mono); font-size: 0.82rem; text-decoration: underline; text-underline-offset: 2px; }
@@ -555,10 +578,16 @@ tbody td strong { color: #fff; }
 }
 @media (max-width: 720px) {
   section { padding: 4rem 0; }
-  /* Comparison: keep the feature names pinned while the columns scroll, and hint at the overflow. */
-  tbody th, thead td { position: sticky; left: 0; z-index: 1; background: var(--surface); min-width: 9.5rem; }
-  tr > :last-child { padding-right: 2.75rem; }
-  .table-wrap { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); }
+  /* Comparison: one card per feature, each product labelled, nothing hidden off-screen. */
+  .table-wrap { overflow: visible; border: 0; background: none; }
+  table { min-width: 0; }
+  table, tbody, tr, th, td { display: block; }
+  thead, caption { display: none; }
+  tbody tr { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; margin-bottom: 0.7rem; overflow: hidden; }
+  tbody th { border-bottom: 1px solid var(--border); padding: 0.8rem 1rem; font-weight: 650; }
+  tbody td { display: flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border-bottom: 0; }
+  tbody td::before { content: attr(data-label); margin-right: auto; color: var(--muted); font-size: 0.86rem; font-weight: 500; }
+  tbody td.col-clavix-cell::before { color: var(--brand-light); font-weight: 650; }
   .js .nav-toggle { display: inline-flex; }
   .js .nav-links {
     position: absolute; top: var(--header-h); left: 0; right: 0;
