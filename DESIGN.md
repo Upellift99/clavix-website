@@ -148,8 +148,8 @@ A blue-black monochrome lit by one saturated blue, with amber held back for hone
 - **Hairline / Strong borders** (`border-hairline`, `border-strong`): blue-tinted translucent strokes; hairline at rest, strong on hover, open or emphasized containers.
 
 ### Status
-- **Warning Amber** (`warning-amber`, text tint `warning-amber-text`): the alpha banner, the "Honest status" note, the "alpha" chip next to the release version, the unsigned-build notes on the download cards, "partial" marks in the comparison table.
-- **Signal Green** (`signal-green`): "yes" checks in the comparison table and the code card's success mark.
+- **Warning Amber** (`warning-amber`, text tint `warning-amber-text`): the alpha banner, the "Honest status" note, the "alpha" chip next to the release version, the unsigned-build notes on the download cards, and the comparison cells where Clavix falls short ("Not yet", "Desktop only").
+- **Signal Green** (`signal-green`): "yes" checks in the comparison table and the code card's success mark. Partial marks use Frost Soft, unknowns ("?") Slate Muted.
 - **Alert Red** (`alert-red`): defined for errors; not currently used on the page.
 
 ### Named Rules
@@ -219,7 +219,7 @@ Softly rounded rectangles throughout, with radius growing with the size of the o
 - **Internal Padding:** 1.7rem for download cards, 2.4rem for the feature lead card.
 
 ### Feature Lead and Groups
-The one thing Clavix exists for (tree vault, drag & drop) gets a full-width Drawer card with a strong border: copy on the left and, on the right, the page's one authored motion: a 7-second CSS loop in a small drawn Clavix window where an item lifts out of the list, travels onto the "Work" folder (which lights up with a dashed blue outline), disappears into it, and the item header below swaps its path from "Personal / Inbox" to "Personal / Work". The loop runs only while on screen and, under reduced motion, shows the finished move as a still. Every other feature lives in one of three titled lists below it: a 1.05rem / 700 group heading over a strong rule, then items separated by hairlines, each with an 18px Vault Blue Light stroke icon inline with its 1rem / 650 title and one or two sentences of Frost Soft text. No icon tiles, no card per feature.
+The one thing Clavix exists for (tree vault, drag & drop) gets a full-width Drawer card with a strong border: copy on the left and, on the right, the page's one authored motion: a 7-second CSS loop in a small drawn Clavix window (Inbox selected in the tree) where a pointer lifts an item out of the list, travels onto the "Work" folder (which lights up with a dashed blue outline), disappears into it, landing just right of the label so "Work" stays readable, and the item header below swaps its path from "Personal / Inbox" to "Personal / Work"; the result holds for about 2.5 s, then the whole demo dims and fades back to the start. The loop runs only while on screen and, under reduced motion, shows the finished move as a still. Every other feature lives in one of three titled lists below it: a 1.05rem / 700 group heading over a strong rule, then items separated by hairlines, each with an 18px Vault Blue Light stroke icon inline with its 1rem / 650 title and one or two sentences of Frost Soft text. No icon tiles, no card per feature.
 
 ### Download Trust Row
 The release version is always a link (to the releases page until the GitHub API answers), followed by an amber "alpha" chip and a one-line "First run" note recommending a test account. Each OS card offers one recommended build as a blue-tinted primary row (AppImage, universal .dmg, setup .exe) with the other formats as small inline links underneath; the visitor's detected OS moves first, gets a "Your system" tag and names the hero button ("Download for Linux"). Unsigned-build notes sit under their OS card in amber cream text. Below the cards, a "Verify your download (SHA-256)" disclosure explains the per-OS hash commands and, when the API answers, lists each file with its GitHub-published digest in a monospace chip.
@@ -242,7 +242,8 @@ Native `details`/`summary` cards; the chevron rotates 180° and turns blue when 
 - **Do** build depth with the navy surface ladder and hairline borders before reaching for a shadow.
 - **Do** use vault blue at different steps and alphas for every emphasis: links, active states, highlighted columns, icon wells.
 - **Do** put every path, command, environment variable and file format in a monospace chip.
-- **Do** keep amber for maturity, limits and risks: the alpha banner, honest-status notes, the alpha chip, unsigned-build notes, "partial" marks.
+- **Do** keep amber for maturity, limits and risks: the alpha banner, honest-status notes, the alpha chip, unsigned-build notes, the comparison cells where Clavix loses.
+- **Do** keep the comparison honest: include rows where Clavix falls short, date it, and mark undocumented competitor facts "?" rather than guessing.
 - **Do** keep everything visible without JavaScript: the scroll reveal only hides elements under `html.js`.
 - **Do** draw product visuals in HTML/CSS like the app mockup, so they stay sharp and on-palette.
 - **Do** respect `prefers-reduced-motion`; motion is limited to short hover lifts, the FAQ chevron, a one-time scroll reveal and the single drag & drop demo loop (paused off-screen, a still under reduced motion).
