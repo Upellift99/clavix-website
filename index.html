@@ -175,7 +175,7 @@
           <article class="fcard reveal">
             <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="3" y2="6"/><line x1="3" y1="12" x2="3" y2="12"/><line x1="3" y1="18" x2="3" y2="18"/><line x1="8" y1="6" x2="21" y2="6"/><line x1="11" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg></div>
             <h3>Tree vault &amp; drag &amp; drop</h3>
-            <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server.</p>
+            <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server. Open an item and its header <strong>spells out where it's filed</strong> — the full folder path, or one line per collection for a shared item — so two entries with the same name never get mixed up.</p>
           </article>
 
           <article class="fcard reveal">
@@ -187,7 +187,7 @@
           <article class="fcard reveal">
             <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
             <h3>Embedded SSH agent</h3>
-            <p>Exposes the Ed25519 and RSA keys from your vault over a Unix socket, so <code>ssh</code>, <code>git</code> and <code>scp</code> use them <span class="tag">without ever writing private keys to disk</span> — like Bitwarden Desktop's agent. <small style="color:var(--muted-dim)">(Linux / macOS)</small></p>
+            <p>Exposes the Ed25519 and RSA keys from your vault — over a Unix socket on Linux and macOS, the OpenSSH pipe and Pageant on Windows — so <code>ssh</code>, <code>git</code> and <code>scp</code> use them <span class="tag">without ever writing private keys to disk</span> — like Bitwarden Desktop's agent.</p>
           </article>
 
           <article class="fcard reveal">
@@ -415,6 +415,10 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <details class="faq-item">
             <summary class="faq-q">Which platforms are supported? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
             <div class="faq-a"><p>Linux (AppImage, .deb, .rpm), macOS (universal .dmg) and Windows (.exe / .msi). The embedded SSH agent works on all three: a Unix socket on Linux and macOS, and on Windows the OpenSSH named pipe plus PuTTY's Pageant.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">Which languages does it speak? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="faq-a"><p>English and French. Switch in <em>Preferences</em>, or right from the sign-in, unlock and two-factor screens — handy when Clavix picked the wrong one before you've even logged in.</p></div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">Does Clavix use the official Bitwarden SDK? <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
