@@ -275,7 +275,7 @@
               <div><h3>Encrypted session at rest</h3><p>The refresh token on disk is itself encrypted under the user key; the access token auto-refreshes 60&nbsp;s before expiry. Files are written <code>0600</code>.</p></div>
             </div>
             <div class="sec-note reveal">
-              <strong>Honest status:</strong> Clavix is alpha. The cryptography has not been independently audited and a significant part of the code was AI-assisted under human review. Don't trust it with irreplaceable secrets yet — see the <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a>.
+              <strong>Honest status:</strong> Clavix is alpha. The cryptography has not been independently audited and a significant part of the code was AI-assisted under human review. Don't trust it with irreplaceable secrets yet — see the <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a>. The <a href="https://github.com/Upellift99/clavix/blob/master/THREAT_MODEL.md" target="_blank" rel="noopener noreferrer">threat model</a>, <a href="https://github.com/Upellift99/clavix/blob/master/CRYPTO.md" target="_blank" rel="noopener noreferrer">crypto notes</a> and <a href="https://github.com/Upellift99/clavix/blob/master/AUDIT_SCOPE.md" target="_blank" rel="noopener noreferrer">audit scope</a> say what is covered; found a problem? Follow the <a href="https://github.com/Upellift99/clavix/blob/master/SECURITY.md" target="_blank" rel="noopener noreferrer">security policy</a> rather than opening a public issue.
             </div>
           </div>
 
@@ -390,6 +390,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <summary>Verify your download <span class="fmt">SHA-256</span> <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
           <div class="dl-verify-body">
             <p>Compare the file's hash with the one GitHub publishes for it: <code>sha256sum &lt;file&gt;</code> on Linux, <code>shasum -a 256 &lt;file&gt;</code> on macOS, <code>Get-FileHash &lt;file&gt;</code> in PowerShell. Every file's hash is listed on the <a href="https://github.com/Upellift99/clavix/releases/latest">release page</a>.</p>
+            <p class="dl-proves"><strong>What this proves:</strong> the file you have is the file uploaded to the release, intact. <strong>What it doesn't:</strong> who built it. Releases aren't signed yet, so a tampered release would come with matching hashes; building from source is the way to rule that out.</p>
             <ul class="dl-sums" id="dl-sums" hidden></ul>
           </div>
         </details>
@@ -509,6 +510,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <ul>
             <li><a href="https://github.com/Upellift99/clavix/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 License</a></li>
             <li><a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">Disclaimer</a></li>
+            <li><a href="https://github.com/Upellift99/clavix/blob/master/SECURITY.md" target="_blank" rel="noopener noreferrer">Security policy</a></li>
           </ul>
         </div>
       </div>

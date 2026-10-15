@@ -445,6 +445,8 @@ tbody td strong { color: #fff; }
 .dl-verify[open] summary .faq-chev { transform: rotate(180deg); color: var(--brand-light); }
 .dl-verify-body { padding: 0 1.2rem 1.1rem; font-size: 0.9rem; color: var(--text-soft); }
 .dl-verify-body a { text-decoration: underline; text-underline-offset: 2px; }
+.dl-proves { margin-top: 0.75rem; padding-left: 0.85rem; border-left: 1px solid rgba(217,162,58,.4); color: var(--text-soft); }
+.dl-proves strong { color: var(--text); }
 .dl-sums { margin-top: 0.9rem; display: flex; flex-direction: column; gap: 0.55rem; }
 .dl-sums li { display: flex; flex-direction: column; gap: 0.15rem; }
 .dl-sum-name { font-size: 0.82rem; color: var(--text); font-weight: 550; }
