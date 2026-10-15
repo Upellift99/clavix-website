@@ -75,11 +75,11 @@ components:
     textColor: "{colors.frost-text}"
     rounded: "{rounded.control}"
     padding: "0.8rem 1.5rem"
-  feature-card:
+  feature-lead:
     backgroundColor: "{colors.drawer}"
     textColor: "{colors.frost-soft}"
     rounded: "{rounded.card}"
-    padding: "{spacing.card-pad}"
+    padding: "2.4rem"
   faq-item:
     backgroundColor: "{colors.drawer}"
     textColor: "{colors.frost-text}"
@@ -96,6 +96,11 @@ components:
     typography: "{typography.mono}"
     rounded: "{rounded.chip}"
     padding: "0.12em 0.42em"
+  chip-alpha:
+    backgroundColor: "rgba(217, 162, 58, 0.12)"
+    textColor: "{colors.warning-amber}"
+    rounded: "{rounded.chip}"
+    padding: "0.05rem 0.5rem"
   warning-note:
     backgroundColor: "rgba(217, 162, 58, 0.08)"
     textColor: "#e7d3a8"
@@ -127,7 +132,7 @@ One deliberate exception breaks the blue monochrome: amber. It is reserved for t
 A blue-black monochrome lit by one saturated blue, with amber held back for honesty.
 
 ### Primary
-- **Vault Blue** (`vault-blue`): the brand anchor. Primary button fill (as the bottom of its gradient), selection highlight, skip link, tinted backgrounds at low alpha (the Clavix column in the comparison table, the drop-target folder, feature icon wells).
+- **Vault Blue** (`vault-blue`): the brand anchor. Primary button fill (as the bottom of its gradient), selection highlight, skip link, tinted backgrounds at low alpha (the Clavix column in the comparison table, the drop-target folder).
 - **Vault Blue Light** (`vault-blue-light`): the working accent on dark. Links, eyebrows, icons, focus rings, hover borders, the top of the primary button gradient.
 - **Vault Blue Pale** (`vault-blue-pale`): text-weight accent. Inline code text, `.tag` highlights in cards, link hover, the start of the hero headline gradient.
 - **Vault Blue Deep** (`vault-blue-deep`): reserved deep step of the ramp; defined but currently unused.
@@ -143,7 +148,7 @@ A blue-black monochrome lit by one saturated blue, with amber held back for hone
 - **Hairline / Strong borders** (`border-hairline`, `border-strong`): blue-tinted translucent strokes; hairline at rest, strong on hover, open or emphasized containers.
 
 ### Status
-- **Warning Amber** (`warning-amber`, text tint `warning-amber-text`): the alpha banner, the "Honest status" note, "partial" marks in the comparison table.
+- **Warning Amber** (`warning-amber`, text tint `warning-amber-text`): the alpha banner, the "Honest status" note, the "alpha" chip next to the release version, the unsigned-build notes on the download cards, "partial" marks in the comparison table.
 - **Signal Green** (`signal-green`): "yes" checks in the comparison table and the code card's success mark.
 - **Alert Red** (`alert-red`): defined for errors; not currently used on the page.
 
@@ -161,7 +166,7 @@ A blue-black monochrome lit by one saturated blue, with amber held back for hone
 **Character:** one neutral grotesque pushed to its extremes: heavy, tightly tracked headings over quiet, airy body text, with monospace as the technical accent.
 
 ### Hierarchy
-- **Display** (800, fluid 2.2–3.5rem, line-height 1.07, -0.03em): the hero headline only. Its key phrase may carry the blue-to-violet text gradient.
+- **Display** (800, fluid 2.2–3.5rem, line-height 1.07, -0.03em): the hero headline only. Its key phrase may carry a pale-to-vault-blue text gradient; no other hue enters it.
 - **Headline** (750, fluid 1.8–2.6rem, 1.12, -0.02em): section titles, centered under an eyebrow. The CTA band uses the same weight a step smaller.
 - **Title** (650, 1.12rem): card, download and security item headings; FAQ questions sit at 600 / 1.02rem.
 - **Body** (400, 1.0625rem, 1.65): page default. Leads go to 1.12–1.2rem in Frost Soft; card text drops to 0.92–0.96rem.
@@ -176,7 +181,7 @@ A blue-black monochrome lit by one saturated blue, with amber held back for hone
 
 A centered column of full-width bands. Content sits in a container capped at 1160px with a 1.5rem side gutter. Sections breathe at 6rem vertical padding (4rem under 720px); alternating bands switch between Night Floor and Night Shelf, separated by hairline borders, to mark rhythm without decoration.
 
-Section heads are centered, capped at 660px, and stack eyebrow → headline → sub. Content below uses simple grids: three columns for features and downloads with a 1.2rem gap, two columns for hero and security. Breakpoints: at 980px the two-column layouts stack and features drop to two columns; at 720px everything is single-column and the nav collapses into a toggle menu; at 460px hero buttons go full-width. The header is sticky at 64px; anchors account for it with scroll padding.
+Section heads are centered, capped at 660px, and stack eyebrow → headline → sub. Features open with one full-width lead card (the tree vault) and continue as three grouped lists with hairline dividers; downloads use three cards with a 1.2rem gap; hero and security use two columns. Breakpoints: at 980px the two-column layouts stack and the feature groups drop to two columns; at 720px everything is single-column and the nav collapses into a toggle menu; at 460px hero buttons go full-width. The header is sticky at 64px; anchors account for it with scroll padding.
 
 ## Elevation & Depth
 
@@ -185,14 +190,14 @@ Depth is tonal first: each layer is a lighter navy than the one beneath (Night F
 ### Shadow Vocabulary
 - **Window lift** (`box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7)`): the hero app mockup; the code card uses a smaller `0 30px 60px -30px rgba(0,0,0,0.8)`.
 - **Blue glow** (`box-shadow: 0 8px 24px -8px rgba(23,93,220,0.45)`, hover `0 14px 34px -10px`): primary buttons and the dragged item in the mockup.
-- **Hover lift** (`box-shadow: 0 18px 40px -24px rgba(0,0,0,0.8)`): feature cards on hover, with `translateY(-3px)`.
+- **Hover lift** (`box-shadow: 0 18px 40px -24px rgba(0,0,0,0.8)`): download cards on hover, with `translateY(-3px)`.
 
 ### Named Rules
 **The Drawer Rule.** To raise something, make its surface one tonal step lighter and give it a hairline border. Reach for a shadow only for a window-like object or a hover response.
 
 ## Shapes
 
-Softly rounded rectangles throughout, with radius growing with the size of the object: 5px chips and badges, 9–10px controls (buttons, download links, nav toggle), 11px panels (FAQ items, notes, icon wells), 14px cards and tables, 16px for the app window, 20px for the CTA band. Circles appear only as status dots, window traffic lights and glow blobs. Borders are always 1px; dashed only for the drop target in the mockup.
+Softly rounded rectangles throughout, with radius growing with the size of the object: 5px chips and badges, 9–10px controls (buttons, download links, nav toggle), 11px panels (FAQ items, notes, the checksum disclosure), 14px cards and tables, 16px for the app window, 20px for the CTA band. Circles appear only as status dots, window traffic lights and glow blobs. Borders are always 1px; dashed only for the drop target in the mockup.
 
 ## Components
 
@@ -208,10 +213,16 @@ Softly rounded rectangles throughout, with radius growing with the size of the o
 
 ### Cards / Containers
 - **Corner Style:** 14px (FAQ items 11px).
-- **Background:** Drawer, with a subtle top-to-bottom fade on feature cards.
-- **Shadow Strategy:** none at rest; hover lift on feature and download cards (see Elevation).
-- **Border:** hairline at rest, strong on hover or when a FAQ item is open.
-- **Internal Padding:** 1.7rem for feature and download cards.
+- **Background:** Drawer.
+- **Shadow Strategy:** none at rest; hover lift on download cards (see Elevation).
+- **Border:** hairline at rest, strong on hover, when a disclosure is open, or on the feature lead card.
+- **Internal Padding:** 1.7rem for download cards, 2.4rem for the feature lead card.
+
+### Feature Lead and Groups
+The one thing Clavix exists for (tree vault, drag & drop) gets a full-width Drawer card with a strong border: copy on the left, a small HTML drawing of the product on the right, its rows sitting directly on the card (Night Shelf rows, no inner panel). Every other feature lives in one of three titled lists below it: a 1.05rem / 700 group heading over a strong rule, then items separated by hairlines, each with an 18px Vault Blue Light stroke icon inline with its 1rem / 650 title and one or two sentences of Frost Soft text. No icon tiles, no card per feature.
+
+### Download Trust Row
+The release version is always a link (to the releases page until the GitHub API answers), followed by an amber "alpha" chip. Unsigned-build notes sit under their OS card in amber cream text. Below the cards, a "Verify your download (SHA-256)" disclosure explains the per-OS hash commands and, when the API answers, lists each file with its GitHub-published digest in a monospace chip.
 
 ### Navigation
 - Sticky 64px header on translucent Night Floor (78%) with a 14px backdrop blur and a hairline bottom border. Logo at 750 with "ix" in Vault Blue Light. Links in Frost Soft at 0.95rem / 500, white on hover; a small primary button closes the row. Under 720px the links collapse into a Night Shelf dropdown behind a bordered toggle.
@@ -231,12 +242,14 @@ Native `details`/`summary` cards; the chevron rotates 180° and turns blue when 
 - **Do** build depth with the navy surface ladder and hairline borders before reaching for a shadow.
 - **Do** use vault blue at different steps and alphas for every emphasis: links, active states, highlighted columns, icon wells.
 - **Do** put every path, command, environment variable and file format in a monospace chip.
-- **Do** keep amber for maturity, limits and risks: the alpha banner, honest-status notes, "partial" marks.
+- **Do** keep amber for maturity, limits and risks: the alpha banner, honest-status notes, the alpha chip, unsigned-build notes, "partial" marks.
+- **Do** keep everything visible without JavaScript: the scroll reveal only hides elements under `html.js`.
 - **Do** draw product visuals in HTML/CSS like the app mockup, so they stay sharp and on-palette.
 - **Do** respect `prefers-reduced-motion`; motion is limited to short hover lifts, the FAQ chevron and a one-time scroll reveal.
 
 ### Don't:
-- **Don't** introduce a light theme section or a second accent hue.
+- **Don't** introduce a light theme section or a second accent hue (that includes violet in gradients or code highlighting).
+- **Don't** return to a grid of same-size icon cards for features.
 - **Don't** use amber decoratively or for calls to action.
 - **Don't** load fonts, scripts or images from third-party hosts.
 - **Don't** add heavy drop shadows to flat content blocks; shadows belong to windows, the primary button and hover states.

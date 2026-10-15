@@ -1,51 +1,189 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T12:30:00Z",
+  "generatedAt": "2026-10-15T13:45:00Z",
   "title": "Design System: Clavix",
   "extensions": {
     "colorMeta": {
-      "vault-blue": { "role": "primary", "displayName": "Vault Blue", "tonalRamp": ["#0a2a66", "#1148ad", "#175ddc", "#2f72e6", "#4d8bf0", "#6ea2f3", "#8fb6f6", "#c9dcfb"] },
-      "vault-blue-light": { "role": "primary", "displayName": "Vault Blue Light" },
-      "vault-blue-pale": { "role": "primary", "displayName": "Vault Blue Pale" },
-      "vault-blue-deep": { "role": "primary", "displayName": "Vault Blue Deep" },
-      "night-floor": { "role": "neutral", "displayName": "Night Floor", "tonalRamp": ["#070b16", "#0b1222", "#111a30", "#16203a", "#1d2a49", "#5f6c89", "#8593b0", "#eef2fb"] },
-      "night-shelf": { "role": "neutral", "displayName": "Night Shelf" },
-      "drawer": { "role": "neutral", "displayName": "Drawer" },
-      "drawer-raised": { "role": "neutral", "displayName": "Drawer Raised" },
-      "drawer-lit": { "role": "neutral", "displayName": "Drawer Lit" },
-      "frost-text": { "role": "neutral", "displayName": "Frost Text" },
-      "frost-soft": { "role": "neutral", "displayName": "Frost Soft" },
-      "slate-muted": { "role": "neutral", "displayName": "Slate Muted" },
-      "slate-dim": { "role": "neutral", "displayName": "Slate Dim" },
-      "border-hairline": { "role": "neutral", "displayName": "Hairline Border" },
-      "border-strong": { "role": "neutral", "displayName": "Strong Border" },
-      "signal-green": { "role": "status", "displayName": "Signal Green" },
-      "warning-amber": { "role": "status", "displayName": "Warning Amber", "tonalRamp": ["#3d2c0c", "#6b4d16", "#9a6f21", "#c38e2e", "#d9a23a", "#e4ba6a", "#f2d9a6", "#faefd9"] },
-      "warning-amber-text": { "role": "status", "displayName": "Warning Cream" },
-      "alert-red": { "role": "status", "displayName": "Alert Red" }
+      "vault-blue": {
+        "role": "primary",
+        "displayName": "Vault Blue",
+        "tonalRamp": [
+          "#0a2a66",
+          "#1148ad",
+          "#175ddc",
+          "#2f72e6",
+          "#4d8bf0",
+          "#6ea2f3",
+          "#8fb6f6",
+          "#c9dcfb"
+        ]
+      },
+      "vault-blue-light": {
+        "role": "primary",
+        "displayName": "Vault Blue Light"
+      },
+      "vault-blue-pale": {
+        "role": "primary",
+        "displayName": "Vault Blue Pale"
+      },
+      "vault-blue-deep": {
+        "role": "primary",
+        "displayName": "Vault Blue Deep"
+      },
+      "night-floor": {
+        "role": "neutral",
+        "displayName": "Night Floor",
+        "tonalRamp": [
+          "#070b16",
+          "#0b1222",
+          "#111a30",
+          "#16203a",
+          "#1d2a49",
+          "#5f6c89",
+          "#8593b0",
+          "#eef2fb"
+        ]
+      },
+      "night-shelf": {
+        "role": "neutral",
+        "displayName": "Night Shelf"
+      },
+      "drawer": {
+        "role": "neutral",
+        "displayName": "Drawer"
+      },
+      "drawer-raised": {
+        "role": "neutral",
+        "displayName": "Drawer Raised"
+      },
+      "drawer-lit": {
+        "role": "neutral",
+        "displayName": "Drawer Lit"
+      },
+      "frost-text": {
+        "role": "neutral",
+        "displayName": "Frost Text"
+      },
+      "frost-soft": {
+        "role": "neutral",
+        "displayName": "Frost Soft"
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted"
+      },
+      "slate-dim": {
+        "role": "neutral",
+        "displayName": "Slate Dim"
+      },
+      "border-hairline": {
+        "role": "neutral",
+        "displayName": "Hairline Border"
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Strong Border"
+      },
+      "signal-green": {
+        "role": "status",
+        "displayName": "Signal Green"
+      },
+      "warning-amber": {
+        "role": "status",
+        "displayName": "Warning Amber",
+        "tonalRamp": [
+          "#3d2c0c",
+          "#6b4d16",
+          "#9a6f21",
+          "#c38e2e",
+          "#d9a23a",
+          "#e4ba6a",
+          "#f2d9a6",
+          "#faefd9"
+        ]
+      },
+      "warning-amber-text": {
+        "role": "status",
+        "displayName": "Warning Cream"
+      },
+      "alert-red": {
+        "role": "status",
+        "displayName": "Alert Red"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero headline only; key phrase may carry the blue-to-violet gradient." },
-      "headline": { "displayName": "Headline", "purpose": "Centered section titles under an eyebrow; CTA band title." },
-      "title": { "displayName": "Title", "purpose": "Card, download and security item headings." },
-      "body": { "displayName": "Body", "purpose": "Page default; leads larger in Frost Soft, card text slightly smaller." },
-      "label": { "displayName": "Eyebrow", "purpose": "Uppercase section eyebrows in Vault Blue Light." },
-      "mono": { "displayName": "Mono", "purpose": "Inline code chips, file formats, code card." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; key phrase may carry a pale-to-vault-blue gradient."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Centered section titles under an eyebrow; CTA band title."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, download and security item headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Page default; leads larger in Frost Soft, card text slightly smaller."
+      },
+      "label": {
+        "displayName": "Eyebrow",
+        "purpose": "Uppercase section eyebrows in Vault Blue Light."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Inline code chips, file formats, code card."
+      }
     },
     "shadows": [
-      { "name": "window-lift", "value": "0 40px 80px -30px rgba(0,0,0,0.7)", "purpose": "Hero app mockup (code card uses 0 30px 60px -30px rgba(0,0,0,0.8))." },
-      { "name": "blue-glow", "value": "0 8px 24px -8px rgba(23,93,220,0.45)", "purpose": "Primary button at rest; hover 0 14px 34px -10px." },
-      { "name": "hover-lift", "value": "0 18px 40px -24px rgba(0,0,0,0.8)", "purpose": "Feature cards on hover, with translateY(-3px)." }
+      {
+        "name": "window-lift",
+        "value": "0 40px 80px -30px rgba(0,0,0,0.7)",
+        "purpose": "Hero app mockup (code card uses 0 30px 60px -30px rgba(0,0,0,0.8))."
+      },
+      {
+        "name": "blue-glow",
+        "value": "0 8px 24px -8px rgba(23,93,220,0.45)",
+        "purpose": "Primary button at rest; hover 0 14px 34px -10px."
+      },
+      {
+        "name": "hover-lift",
+        "value": "0 18px 40px -24px rgba(0,0,0,0.8)",
+        "purpose": "Download cards on hover, with translateY(-3px)."
+      }
     ],
     "motion": [
-      { "name": "hover-fast", "value": "transform .12s, background .18s, border-color .18s, box-shadow .18s, color .18s", "purpose": "Buttons and links." },
-      { "name": "card-hover", "value": "border-color .2s, transform .2s, box-shadow .2s", "purpose": "Feature and download cards." },
-      { "name": "reveal", "value": "opacity .6s ease, transform .6s ease (from translateY(18px))", "purpose": "One-time scroll reveal; disabled under prefers-reduced-motion." }
+      {
+        "name": "hover-fast",
+        "value": "transform .12s, background .18s, border-color .18s, box-shadow .18s, color .18s",
+        "purpose": "Buttons and links."
+      },
+      {
+        "name": "card-hover",
+        "value": "border-color .2s, transform .2s, box-shadow .2s",
+        "purpose": "Download cards."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity .6s ease, transform .6s ease (from translateY(18px))",
+        "purpose": "One-time scroll reveal, only under html.js so content stays visible without JavaScript; disabled under prefers-reduced-motion."
+      }
     ],
     "breakpoints": [
-      { "name": "tablet", "value": "980px" },
-      { "name": "mobile", "value": "720px" },
-      { "name": "small", "value": "460px" }
+      {
+        "name": "tablet",
+        "value": "980px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
+      },
+      {
+        "name": "small",
+        "value": "460px"
+      }
     ]
   },
   "components": [
@@ -81,12 +219,12 @@
       "css": ".ds-p { color: #c2cce0; font: 400 .96rem/1.7 Inter, system-ui, sans-serif; } .ds-code { font-family: 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace; font-size: .88em; background: rgba(143,170,220,.12); color: #8fb6f6; padding: .12em .42em; border-radius: 5px; }"
     },
     {
-      "name": "Feature Card",
-      "kind": "card",
-      "refersTo": "feature-card",
-      "description": "Drawer-surface card with blue icon well; lifts on hover.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-icon\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><line x1=\"8\" y1=\"6\" x2=\"21\" y2=\"6\"/><line x1=\"8\" y1=\"12\" x2=\"21\" y2=\"12\"/><line x1=\"8\" y1=\"18\" x2=\"21\" y2=\"18\"/></svg></div><h3>Tree vault &amp; drag &amp; drop</h3><p>A real hierarchical tree. <span class=\"ds-tag\">Drag items onto folders</span>.</p></article>",
-      "css": ".ds-card { background: linear-gradient(180deg, #111a30, #111a30 60%, rgba(17,26,48,.6)); border: 1px solid rgba(143,170,220,.14); border-radius: 14px; padding: 1.7rem; font-family: Inter, system-ui, sans-serif; transition: border-color .2s, transform .2s, box-shadow .2s; } .ds-card:hover { border-color: rgba(143,170,220,.28); transform: translateY(-3px); box-shadow: 0 18px 40px -24px rgba(0,0,0,.8); } .ds-icon { width: 46px; height: 46px; border-radius: 11px; margin-bottom: 1.1rem; display: grid; place-items: center; color: #4d8bf0; background: rgba(23,93,220,.13); border: 1px solid rgba(23,93,220,.22); } .ds-card h3 { color: #eef2fb; font-size: 1.12rem; font-weight: 650; margin: 0 0 .4rem; } .ds-card p { color: #c2cce0; font-size: .95rem; line-height: 1.6; margin: 0; } .ds-tag { color: #8fb6f6; font-weight: 600; }"
+      "name": "Feature Group",
+      "kind": "custom",
+      "refersTo": "feature-lead",
+      "description": "Titled list of features with hairline dividers and inline icons; replaces the icon-card grid.",
+      "html": "<div class=\"ds-fgroup\"><h3>Sign-in &amp; keys</h3><div class=\"ds-fitem\"><h4><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg> Embedded SSH agent</h4><p>Serves your vault's keys to <code>ssh</code> <span class=\"ds-tag\">without writing them to disk</span>.</p></div><div class=\"ds-fitem\"><h4>YubiKey unlock</h4><p>Touch a registered FIDO2 key instead of retyping your password.</p></div></div>",
+      "css": ".ds-fgroup { font-family: Inter, system-ui, sans-serif; max-width: 360px; } .ds-fgroup h3 { color: #eef2fb; font-size: 1.05rem; font-weight: 700; margin: 0; padding-bottom: .85rem; border-bottom: 1px solid rgba(143,170,220,.28); } .ds-fitem { padding: 1.15rem 0; border-bottom: 1px solid rgba(143,170,220,.14); } .ds-fitem:last-child { border-bottom: none; } .ds-fitem h4 { display: flex; align-items: flex-start; gap: .55rem; color: #eef2fb; font-size: 1rem; font-weight: 650; margin: 0 0 .35rem; } .ds-fitem h4 svg { color: #4d8bf0; flex-shrink: 0; } .ds-fitem p { color: #c2cce0; font-size: .93rem; line-height: 1.6; margin: 0; } .ds-fitem code { font-family: 'JetBrains Mono', monospace; font-size: .88em; background: rgba(143,170,220,.12); color: #8fb6f6; padding: .12em .42em; border-radius: 5px; } .ds-tag { color: #8fb6f6; font-weight: 600; }"
     },
     {
       "name": "Honest Status Note",
@@ -116,26 +254,48 @@
       "Technical texture: monospace chips, code card, CSS-drawn app window."
     ],
     "rules": [
-      { "name": "The One Light Rule", "body": "Vault blue is the only accent hue. A new element earns emphasis through blue at the right step or alpha, never through a new color.", "section": "colors" },
-      { "name": "The Honest Amber Rule", "body": "Amber means \"this is a limit or a risk you should know about.\" It is never decorative, never a second brand color, and never used for a call to action.", "section": "colors" },
-      { "name": "The Weight, Not Size Rule", "body": "Hierarchy comes from Inter's weight axis (400 → 650 → 750 → 800) and tracking as much as from size. Keep intermediate weights (550, 650, 750) rather than snapping to 500/600/700.", "section": "typography" },
-      { "name": "The Self-Hosted Rule", "body": "Fonts are served from the site itself; no font CDN, in keeping with the no-third-party-requests promise.", "section": "typography" },
-      { "name": "The Drawer Rule", "body": "To raise something, make its surface one tonal step lighter and give it a hairline border. Reach for a shadow only for a window-like object or a hover response.", "section": "elevation" }
+      {
+        "name": "The One Light Rule",
+        "body": "Vault blue is the only accent hue. A new element earns emphasis through blue at the right step or alpha, never through a new color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Honest Amber Rule",
+        "body": "Amber means \"this is a limit or a risk you should know about.\" It is never decorative, never a second brand color, and never used for a call to action.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight, Not Size Rule",
+        "body": "Hierarchy comes from Inter's weight axis (400 → 650 → 750 → 800) and tracking as much as from size. Keep intermediate weights (550, 650, 750) rather than snapping to 500/600/700.",
+        "section": "typography"
+      },
+      {
+        "name": "The Self-Hosted Rule",
+        "body": "Fonts are served from the site itself; no font CDN, in keeping with the no-third-party-requests promise.",
+        "section": "typography"
+      },
+      {
+        "name": "The Drawer Rule",
+        "body": "To raise something, make its surface one tonal step lighter and give it a hairline border. Reach for a shadow only for a window-like object or a hover response.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do build depth with the navy surface ladder and hairline borders before reaching for a shadow.",
       "Do use vault blue at different steps and alphas for every emphasis: links, active states, highlighted columns, icon wells.",
       "Do put every path, command, environment variable and file format in a monospace chip.",
-      "Do keep amber for maturity, limits and risks: the alpha banner, honest-status notes, \"partial\" marks.",
+      "Do keep amber for maturity, limits and risks: the alpha banner, honest-status notes, the alpha chip, unsigned-build notes, \"partial\" marks.",
       "Do draw product visuals in HTML/CSS like the app mockup, so they stay sharp and on-palette.",
-      "Do respect prefers-reduced-motion; motion is limited to short hover lifts, the FAQ chevron and a one-time scroll reveal."
+      "Do respect prefers-reduced-motion; motion is limited to short hover lifts, the FAQ chevron and a one-time scroll reveal.",
+      "Do keep everything visible without JavaScript: the scroll reveal only hides elements under html.js."
     ],
     "donts": [
-      "Don't introduce a light theme section or a second accent hue.",
+      "Don't introduce a light theme section or a second accent hue (that includes violet in gradients or code highlighting).",
       "Don't use amber decoratively or for calls to action.",
       "Don't load fonts, scripts or images from third-party hosts.",
       "Don't add heavy drop shadows to flat content blocks; shadows belong to windows, the primary button and hover states.",
-      "Don't use pure white for body text; it is reserved for strong and hover."
+      "Don't use pure white for body text; it is reserved for strong and hover.",
+      "Don't return to a grid of same-size icon cards for features."
     ]
   }
 }

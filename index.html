@@ -27,6 +27,7 @@
   <meta name="theme-color" content="#070b16">
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body data-repo="Upellift99/clavix">
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -158,74 +159,84 @@
           <h2 class="section-title">Everything KeePassXC users miss in the official client</h2>
           <p class="section-sub">Clavix talks to your real Vaultwarden or Bitwarden server — it just gives you a far nicer way to live in your vault.</p>
         </div>
-        <div class="features-grid">
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.9" y1="4.9" x2="9.2" y2="9.2"/><line x1="14.8" y1="14.8" x2="19.1" y2="19.1"/><line x1="14.8" y1="9.2" x2="19.1" y2="4.9"/><line x1="4.9" y1="19.1" x2="9.2" y2="14.8"/></svg></div>
-            <h3>Encrypted backups you can actually open</h3>
-            <p>Export your whole vault — <strong>every item type</strong>, not just the logins and notes a CSV can carry — sealed under a password you choose (<span class="tag">Argon2id</span>). Re-import it later, or open it <strong>read-only with no server and no account at all</strong>: the file is all you need. A backup nobody can restore isn't a backup.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="9"/><line x1="18" y1="20" x2="18" y2="4"/></svg></div>
-            <h3>Password strength, where you choose one</h3>
-            <p>The generator shows <strong>exact entropy in bits</strong> — untick a character class and the number drops, which a 0–5 guessability score never would. The editor and item view show a zxcvbn score instead, computed in Rust: the item view can rate a password that is <span class="tag">still masked</span>, and the editor can never disagree with the security audit.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="3" y2="6"/><line x1="3" y1="12" x2="3" y2="12"/><line x1="3" y1="18" x2="3" y2="18"/><line x1="8" y1="6" x2="21" y2="6"/><line x1="11" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg></div>
+        <article class="flead reveal">
+          <div class="flead-copy">
             <h3>Tree vault &amp; drag &amp; drop</h3>
-            <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server. Open an item and its header <strong>spells out where it's filed</strong> — the full folder path, or one line per collection for a shared item — so two entries with the same name never get mixed up.</p>
-          </article>
+            <p>A real hierarchical tree built from your <code>parent/child</code> folder names and org collections. <span class="tag">Drag items onto folders</span>, drag whole folders to reorganise — sub-folders cascade-rename on the server.</p>
+            <p>Open an item and its header <strong>spells out where it's filed</strong>: the full folder path, or one line per collection for a shared item. Two entries with the same name never get mixed up.</p>
+          </div>
+          <div class="flead-demo" aria-hidden="true">
+            <div class="fd-head">
+              <span class="mk-fav fd-fav">G</span>
+              <div class="fd-meta">
+                <span class="fd-title">GitLab — self-hosted</span>
+                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal <i>/</i> Work <i>/</i> Projects</span>
+              </div>
+            </div>
+            <div class="fd-head">
+              <span class="mk-fav fd-fav fd-fav-org">G</span>
+              <div class="fd-meta">
+                <span class="fd-title">GitLab — self-hosted</span>
+                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc. <i>/</i> Shared</span>
+                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc. <i>/</i> Ops</span>
+              </div>
+            </div>
+            <p class="fd-cap">Same name, two items — the header tells them apart.</p>
+          </div>
+        </article>
 
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-            <h3>Full 2FA, including WebAuthn</h3>
-            <p>TOTP, YubiKey OTP and <span class="tag">WebAuthn / FIDO2</span> — Clavix drives your hardware key over CTAP2/HID itself, so security keys work even though a desktop app isn't a browser on your vault's domain.</p>
-          </article>
+        <div class="fgroups">
+          <div class="fgroup reveal">
+            <h3>Sign-in &amp; keys</h3>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> Full 2FA, including WebAuthn</h4>
+                <p>TOTP, YubiKey OTP and <span class="tag">WebAuthn / FIDO2</span>. Clavix drives your hardware key over CTAP2/HID itself, so it works even though a desktop app isn't a browser on your vault's domain.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg> YubiKey unlock</h4>
+                <p>After auto-lock, <span class="tag">touch a registered FIDO2 key</span> instead of retyping your master password — CTAP2 <code>hmac-secret</code>, like Bitwarden's PRF unlock.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> Embedded SSH agent</h4>
+                <p>Serves your vault's Ed25519 and RSA keys to <code>ssh</code>, <code>git</code> and <code>scp</code> <span class="tag">without writing them to disk</span> — Unix socket on Linux and macOS, OpenSSH pipe and Pageant on Windows.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Live TOTP &amp; QR scanner</h4>
+                <p>Rolling codes from stored secrets (custom period, digits and hash), and <span class="tag">QR scanning with your camera</span> to add a new secret while editing a login.</p>
+              </div>
+          </div>
 
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
-            <h3>Embedded SSH agent</h3>
-            <p>Exposes the Ed25519 and RSA keys from your vault — over a Unix socket on Linux and macOS, the OpenSSH pipe and Pageant on Windows — so <code>ssh</code>, <code>git</code> and <code>scp</code> use them <span class="tag">without ever writing private keys to disk</span> — like Bitwarden Desktop's agent.</p>
-          </article>
+          <div class="fgroup reveal">
+            <h3>Safety nets</h3>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.9" y1="4.9" x2="9.2" y2="9.2"/><line x1="14.8" y1="14.8" x2="19.1" y2="19.1"/><line x1="14.8" y1="9.2" x2="19.1" y2="4.9"/><line x1="4.9" y1="19.1" x2="9.2" y2="14.8"/></svg> Encrypted backups you can actually open</h4>
+                <p>Export <strong>every item type</strong> under a password you choose (<span class="tag">Argon2id</span>). Re-import it, or open it <strong>read-only with no server and no account</strong>.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> Encrypted offline cache</h4>
+                <p>The vault is cached in <span class="tag">encrypted SQLite</span> under your user key, so unlocking is instant — and when your server is unreachable, it <strong>opens read-only from the cache</strong>.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="16.5" x2="12.01" y2="16.5"/></svg> Built-in security audit</h4>
+                <p>A <span class="tag">Have I Been Pwned</span> k-anonymity lookup, plus local checks for <strong>reused</strong> and <strong>weak</strong> passwords. No password or hash leaves your machine in the clear.</p>
+              </div>
+          </div>
 
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="16.5" x2="12.01" y2="16.5"/></svg></div>
-            <h3>Built-in security audit</h3>
-            <p>One click runs a <span class="tag">Have I Been Pwned</span> k-anonymity breach lookup and flags <strong>reused</strong> and <strong>weak</strong> passwords locally with zxcvbn — no password or hash ever leaves your machine in the clear.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-            <h3>Live TOTP &amp; QR scanner</h3>
-            <p>Generates rolling TOTP codes from stored secrets (custom period, digits and hash), and <span class="tag">scans QR codes with your camera</span> to capture a new TOTP secret while editing a login.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-            <h3>Encrypted offline cache</h3>
-            <p>The whole vault is cached in <span class="tag">encrypted SQLite</span> under the user key, so unlocking paints instantly with no server round-trip. When your server is unreachable, the unlock <strong>falls back to that cache</strong> and opens the vault read-only instead of leaving you stuck.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 11 2 2 4-4"/></svg></div>
-            <h3>YubiKey unlock</h3>
-            <p>After auto-lock, <span class="tag">touch a registered FIDO2 key</span> to release the cached user key instead of re-typing your master password — CTAP2 <code>hmac-secret</code>, conceptually the same as Bitwarden's PRF unlock.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg></div>
-            <h3>KeePassXC import</h3>
-            <p>Bring a KeePassXC CSV export straight in — Clavix <span class="tag">creates a folder per Group</span> on the fly, so your existing hierarchy lands intact instead of as a flat dump.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
-            <h3>System tray &amp; auto-lock</h3>
-            <p>Lives in the tray with a right-click menu, hides on close like KeePassXC, and <span class="tag">auto-locks on idle</span> — a Rust watchdog drops the in-memory session even if the window freezes. Clipboard clears after 30&nbsp;s.</p>
-          </article>
-
+          <div class="fgroup reveal">
+            <h3>Day to day</h3>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="9"/><line x1="18" y1="20" x2="18" y2="4"/></svg> Password strength, where you choose one</h4>
+                <p>The generator shows <strong>exact entropy in bits</strong>; the editor and item view show a zxcvbn score computed in Rust — even for a password that is <span class="tag">still masked</span>, and always in line with the audit.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg> KeePassXC import</h4>
+                <p>Bring in a KeePassXC CSV export: Clavix <span class="tag">creates a folder per Group</span>, so your hierarchy lands intact instead of as a flat dump.</p>
+              </div>
+              <div class="fitem">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg> System tray &amp; auto-lock</h4>
+                <p>Hides to the tray on close like KeePassXC and <span class="tag">auto-locks on idle</span> — a Rust watchdog drops the session even if the window freezes. The clipboard clears after 30&nbsp;s.</p>
+              </div>
+          </div>
         </div>
       </div>
     </section>
@@ -275,9 +286,8 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
 <span class="kw">let</span> cipher = <span class="fn2">decrypt_aes_cbc_hmac</span>(&amp;enc, &amp;key)?;
 
 <span class="cm">// …and keys wipe themselves on drop.</span>
-<span class="kw">impl</span> Drop <span class="kw">for</span> MasterKey {
-    <span class="kw">fn</span> <span class="fn2">drop</span>(&amp;<span class="kw">mut</span> self) { self.0.<span class="fn2">zeroize</span>(); } <span class="ok">// ✓</span>
-}</pre>
+#[<span class="fn2">derive</span>(ZeroizeOnDrop)]
+<span class="kw">struct</span> MasterKey([<span class="kw">u8</span>; 32]); <span class="ok">// ✓ wiped when dropped</span></pre>
           </div>
         </div>
       </div>
@@ -325,7 +335,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <h2 class="section-title">Get Clavix for your platform</h2>
           <p class="section-sub">Free and open source. Pick a build below — links always resolve to the newest release.</p>
         </div>
-        <p class="dl-version" id="dl-version">Latest release: <b id="dl-tag">loading…</b></p>
+        <p class="dl-version" id="dl-version">Latest release: <a id="dl-tag" href="https://github.com/Upellift99/clavix/releases/latest">on GitHub</a> <span class="chip-alpha">alpha</span></p>
         <div class="dl-grid">
 
           <article class="dl-card reveal">
@@ -334,9 +344,9 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
               <h3>Linux</h3>
             </div>
             <div class="dl-links" data-os="linux">
-              <a data-ext=".AppImage" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">AppImage <span class="fmt">portable</span></a>
-              <a data-ext=".deb" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Debian / Ubuntu <span class="fmt">.deb</span></a>
-              <a data-ext=".rpm" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Fedora / RHEL <span class="fmt">.rpm</span></a>
+              <a data-ext=".AppImage" href="https://github.com/Upellift99/clavix/releases/latest">AppImage <span class="fmt">portable</span></a>
+              <a data-ext=".deb" href="https://github.com/Upellift99/clavix/releases/latest">Debian / Ubuntu <span class="fmt">.deb</span></a>
+              <a data-ext=".rpm" href="https://github.com/Upellift99/clavix/releases/latest">Fedora / RHEL <span class="fmt">.rpm</span></a>
             </div>
           </article>
 
@@ -346,10 +356,10 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
               <h3>macOS</h3>
             </div>
             <div class="dl-links" data-os="macos">
-              <a data-ext=".dmg" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Universal disk image <span class="fmt">.dmg</span></a>
-              <a data-ext=".app.tar.gz" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">App bundle <span class="fmt">.app.tar.gz</span></a>
+              <a data-ext=".dmg" href="https://github.com/Upellift99/clavix/releases/latest">Universal disk image <span class="fmt">.dmg</span></a>
+              <a data-ext=".app.tar.gz" href="https://github.com/Upellift99/clavix/releases/latest">App bundle <span class="fmt">.app.tar.gz</span></a>
             </div>
-            <p class="dl-foot" style="margin-top:.6rem;font-size:.78rem;text-align:left;color:var(--muted-dim)">Not yet code-signed — right-click → Open on first launch.</p>
+            <p class="dl-note">Not yet code-signed — right-click → Open on first launch.</p>
           </article>
 
           <article class="dl-card reveal">
@@ -358,13 +368,20 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
               <h3>Windows</h3>
             </div>
             <div class="dl-links" data-os="windows">
-              <a data-ext="-setup.exe" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">Installer <span class="fmt">.exe</span></a>
-              <a data-ext=".msi" href="https://github.com/Upellift99/clavix/releases/latest" target="_blank" rel="noopener noreferrer">MSI package <span class="fmt">.msi</span></a>
+              <a data-ext="-setup.exe" href="https://github.com/Upellift99/clavix/releases/latest">Installer <span class="fmt">.exe</span></a>
+              <a data-ext=".msi" href="https://github.com/Upellift99/clavix/releases/latest">MSI package <span class="fmt">.msi</span></a>
             </div>
-            <p class="dl-foot" style="margin-top:.6rem;font-size:.78rem;text-align:left;color:var(--muted-dim)">Not yet code-signed — SmartScreen may warn on first run.</p>
+            <p class="dl-note">Not yet code-signed — SmartScreen may warn on first run.</p>
           </article>
 
         </div>
+        <details class="dl-verify" id="dl-verify">
+          <summary>Verify your download <span class="fmt">SHA-256</span> <svg class="faq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="dl-verify-body">
+            <p>Compare the file's hash with the one GitHub publishes for it: <code>sha256sum &lt;file&gt;</code> on Linux, <code>shasum -a 256 &lt;file&gt;</code> on macOS, <code>Get-FileHash &lt;file&gt;</code> in PowerShell. Every file's hash is listed on the <a href="https://github.com/Upellift99/clavix/releases/latest">release page</a>.</p>
+            <ul class="dl-sums" id="dl-sums" hidden></ul>
+          </div>
+        </details>
         <p class="dl-foot">
           <span class="dl-build"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg> Or build from source</span>
           — see the <a href="https://github.com/Upellift99/clavix#development-requirements" target="_blank" rel="noopener noreferrer">development guide</a>, or browse <a href="https://github.com/Upellift99/clavix/releases" target="_blank" rel="noopener noreferrer">all releases</a>.

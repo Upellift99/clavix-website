@@ -67,9 +67,12 @@
     })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
       .then(function (rel) {
+        // #dl-tag is already a link to /releases/latest; on failure it stays
+        // that way, so there is no dead "loading…" text to clean up.
         if (tagEl && rel.tag_name) {
           tagEl.textContent = rel.tag_name;
           tagEl.title = 'Released ' + (rel.published_at || '').slice(0, 10);
+          if (rel.html_url) tagEl.href = rel.html_url;
         }
         var assets = rel.assets || [];
         // For each download link, find the matching asset by extension and
@@ -79,17 +82,27 @@
           var match = assets.find(function (as) {
             return as.name.slice(-ext.length).toLowerCase() === ext.toLowerCase();
           });
-          if (match && match.browser_download_url) {
-            a.href = match.browser_download_url;
-            a.setAttribute('download', '');
-          }
+          if (match && match.browser_download_url) a.href = match.browser_download_url;
         });
-      })
-      .catch(function () {
-        if (tagEl) {
-          tagEl.textContent = 'see releases';
-          tagEl.parentElement.querySelector && null;
+        // List the SHA-256 GitHub computed for each asset, so a download can
+        // be checked without leaving the page.
+        var sums = document.getElementById('dl-sums');
+        var withDigest = assets.filter(function (as) { return /^sha256:/.test(as.digest || ''); });
+        if (sums && withDigest.length) {
+          withDigest.forEach(function (as) {
+            var li = document.createElement('li');
+            var name = document.createElement('span');
+            name.className = 'dl-sum-name';
+            name.textContent = as.name;
+            var hash = document.createElement('code');
+            hash.textContent = as.digest.slice(7);
+            li.appendChild(name);
+            li.appendChild(hash);
+            sums.appendChild(li);
+          });
+          sums.hidden = false;
         }
-      });
+      })
+      .catch(function () { /* keep the static links to the releases page */ });
   }
 })();
