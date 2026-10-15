@@ -118,11 +118,11 @@
                 <span class="mk-badge">drag → Work</span>
               </div>
               <div class="mk-item">
-                <span class="mk-fav" style="background:#e8543f">M</span>
+                <span class="mk-fav" style="background:#c94431">M</span>
                 <span class="mk-meta"><span class="t">Mailcow admin</span><span class="s">postmaster@acme.dev</span></span>
               </div>
               <div class="mk-item">
-                <span class="mk-fav" style="background:#1f8f5f">S</span>
+                <span class="mk-fav" style="background:#1b7a51">S</span>
                 <span class="mk-meta"><span class="t">SSH — build server</span><span class="s">ed25519 · used by agent</span></span>
               </div>
               <div class="mk-item">
@@ -130,7 +130,7 @@
                 <span class="mk-meta"><span class="t">Nextcloud</span><span class="s">2FA · TOTP</span></span>
               </div>
               <div class="mk-item">
-                <span class="mk-fav" style="background:#d9a23a">V</span>
+                <span class="mk-fav" style="background:#d9a23a;color:#2a1d05">V</span>
                 <span class="mk-meta"><span class="t">Vaultwarden master</span><span class="s">YubiKey unlock enrolled</span></span>
               </div>
             </div>
@@ -143,11 +143,11 @@
     <!-- Trust strip -->
     <div class="trust">
       <div class="container trust-row">
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Client-side encryption</span>
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><line x1="12" y1="2" x2="12" y2="12"/></svg> No telemetry, ever</span>
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> Works offline</span>
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> 100% open source</span>
-        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Native &amp; lightweight</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Client-side encryption</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><line x1="12" y1="2" x2="12" y2="12"/></svg> No telemetry, ever</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> Works offline</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> 100% open source</span>
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Native &amp; lightweight</span>
       </div>
     </div>
 
@@ -253,19 +253,19 @@
           <div class="sec-list">
             <div class="sec-item reveal">
               <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><h4>Only derived values are sent</h4><p>The server sees the master-password hash for auth and never the password itself; the master key stays on the client for decryption.</p></div>
+              <div><h3>Only derived values are sent</h3><p>The server sees the master-password hash for auth and never the password itself; the master key stays on the client for decryption.</p></div>
             </div>
             <div class="sec-item reveal">
               <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><h4>AES-256-CBC + HMAC-SHA256</h4><p>Personal vault items are decrypted and encrypted client-side; organization keys use RSA-OAEP. PBKDF2 and Argon2id KDFs are both supported.</p></div>
+              <div><h3>AES-256-CBC + HMAC-SHA256</h3><p>Personal vault items are decrypted and encrypted client-side; organization keys use RSA-OAEP. PBKDF2 and Argon2id KDFs are both supported.</p></div>
             </div>
             <div class="sec-item reveal">
               <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><h4>Keys zeroized on drop</h4><p>Every sensitive key derives <code>ZeroizeOnDrop</code>, wiping its bytes from memory the moment it's no longer needed.</p></div>
+              <div><h3>Keys zeroized on drop</h3><p>Every sensitive key derives <code>ZeroizeOnDrop</code>, wiping its bytes from memory the moment it's no longer needed.</p></div>
             </div>
             <div class="sec-item reveal">
               <span class="ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><h4>Encrypted session at rest</h4><p>The refresh token on disk is itself encrypted under the user key; the access token auto-refreshes 60&nbsp;s before expiry. Files are written <code>0600</code>.</p></div>
+              <div><h3>Encrypted session at rest</h3><p>The refresh token on disk is itself encrypted under the user key; the access token auto-refreshes 60&nbsp;s before expiry. Files are written <code>0600</code>.</p></div>
             </div>
             <div class="sec-note reveal">
               <strong>Honest status:</strong> Clavix is alpha. The cryptography has not been independently audited and a significant part of the code was AI-assisted under human review. Don't trust it with irreplaceable secrets yet — see the <a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">disclaimer</a>.
@@ -303,23 +303,24 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
         </div>
         <div class="table-wrap reveal">
           <table>
+            <caption class="visually-hidden">Feature comparison of Clavix, Bitwarden Desktop and Keyguard</caption>
             <thead>
               <tr>
-                <th></th>
-                <th class="col-clavix">Clavix</th>
-                <th>Bitwarden Desktop</th>
-                <th>Keyguard</th>
+                <td></td>
+                <th scope="col" class="col-clavix">Clavix</th>
+                <th scope="col">Bitwarden Desktop</th>
+                <th scope="col">Keyguard</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Tree vault (nested folders)</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-part" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="Partial"><line x1="5" y1="12" x2="19" y2="12"/></svg></td></tr>
-              <tr><td>Drag &amp; drop items / folders</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
-              <tr><td>Create &amp; edit items (write)</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td>Premium only</td></tr>
-              <tr><td>Embedded SSH agent</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
-              <tr><td>WebAuthn / FIDO2 login</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-              <tr><td>Native (not Electron)</td><td class="col-clavix-cell"><strong>Tauri / Rust</strong></td><td>Electron</td><td>Compose</td></tr>
-              <tr><td>Self-hosted friendly</td><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-              <tr><td>Price</td><td class="col-clavix-cell"><strong>Free · GPL-3.0</strong></td><td>Free / Premium</td><td>Free / Premium</td></tr>
+              <tr><th scope="row">Tree vault (nested folders)</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-part" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="Partial"><line x1="5" y1="12" x2="19" y2="12"/></svg></td></tr>
+              <tr><th scope="row">Drag &amp; drop items / folders</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
+              <tr><th scope="row">Create &amp; edit items (write)</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td>Premium only</td></tr>
+              <tr><th scope="row">Embedded SSH agent</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="No"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td></tr>
+              <tr><th scope="row">WebAuthn / FIDO2 login</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Native (not Electron)</th><td class="col-clavix-cell"><strong>Tauri / Rust</strong></td><td>Electron</td><td>Compose</td></tr>
+              <tr><th scope="row">Self-hosted friendly</th><td class="col-clavix-cell"><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="ic-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+              <tr><th scope="row">Price</th><td class="col-clavix-cell"><strong>Free · GPL-3.0</strong></td><td>Free / Premium</td><td>Free / Premium</td></tr>
             </tbody>
           </table>
         </div>
@@ -476,7 +477,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           <p>A modern desktop client for Vaultwarden &amp; Bitwarden: the features of Bitwarden with the simplicity of KeePassXC.</p>
         </div>
         <div class="footer-col">
-          <h4>Product</h4>
+          <h2>Product</h2>
           <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#security">Security</a></li>
@@ -485,7 +486,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Project</h4>
+          <h2>Project</h2>
           <ul>
             <li><a href="https://github.com/Upellift99/clavix" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://github.com/Upellift99/clavix/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
@@ -494,7 +495,7 @@ client.<span class="fn2">login</span>(email, hash).<span class="kw">await</span>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
+          <h2>Legal</h2>
           <ul>
             <li><a href="https://github.com/Upellift99/clavix/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 License</a></li>
             <li><a href="https://github.com/Upellift99/clavix/blob/master/DISCLAIMER.md" target="_blank" rel="noopener noreferrer">Disclaimer</a></li>

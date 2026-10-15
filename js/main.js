@@ -14,11 +14,14 @@
       this.setAttribute('aria-expanded', String(!open));
       links.classList.toggle('open');
     });
-    links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+    var closeMenu = function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+    links.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+    // Escape closes the open menu and hands focus back to the toggle.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) { closeMenu(); toggle.focus(); }
     });
   }
 
