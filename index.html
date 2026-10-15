@@ -115,7 +115,7 @@
               <div class="mk-item dragging">
                 <span class="mk-fav" style="background:#2d6cdf">G</span>
                 <span class="mk-meta"><span class="t">GitLab — self-hosted</span><span class="s">ops@acme.dev</span></span>
-                <span class="mk-badge">drag → Work</span>
+                <span class="mk-badge"><span class="mk-badge-verb">drag </span>→ Work</span>
               </div>
               <div class="mk-item">
                 <span class="mk-fav" style="background:#c94431">M</span>
@@ -166,22 +166,29 @@
             <p>Open an item and its header <strong>spells out where it's filed</strong>: the full folder path, or one line per collection for a shared item. Two entries with the same name never get mixed up.</p>
           </div>
           <div class="flead-demo" aria-hidden="true">
+            <div class="fdemo">
+              <div class="fdemo-tree">
+                <div class="fdemo-node"><span class="mk-caret">▾</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal</div>
+                <div class="fdemo-node child"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Inbox</div>
+                <div class="fdemo-node child fdemo-target"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Work</div>
+                <div class="fdemo-node child"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Projects</div>
+                <div class="fdemo-node"><span class="mk-caret">▸</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc.</div>
+              </div>
+              <div class="fdemo-list">
+                <div class="fdemo-slot"></div>
+                <div class="fdemo-row"><span class="mk-fav" style="background:#c94431">M</span> Mailcow admin</div>
+                <div class="fdemo-row"><span class="mk-fav" style="background:#0072b1">N</span> Nextcloud</div>
+              </div>
+              <div class="fdemo-chip"><span class="mk-fav" style="background:#2d6cdf">G</span> GitLab — self-hosted</div>
+            </div>
             <div class="fd-head">
               <span class="mk-fav fd-fav">G</span>
               <div class="fd-meta">
                 <span class="fd-title">GitLab — self-hosted</span>
-                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Personal <i>/</i> Work <i>/</i> Projects</span>
+                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> <span class="fd-swap"><span class="fd-from">Personal <i>/</i> Inbox</span><span class="fd-to">Personal <i>/</i> Work</span></span></span>
               </div>
             </div>
-            <div class="fd-head">
-              <span class="mk-fav fd-fav fd-fav-org">G</span>
-              <div class="fd-meta">
-                <span class="fd-title">GitLab — self-hosted</span>
-                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc. <i>/</i> Shared</span>
-                <span class="fd-path"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Acme Inc. <i>/</i> Ops</span>
-              </div>
-            </div>
-            <p class="fd-cap">Same name, two items — the header tells them apart.</p>
+            <p class="fd-cap">Drop it on a folder: the move syncs to your server, and the item's header shows where it now lives.</p>
           </div>
         </article>
 

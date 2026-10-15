@@ -53,6 +53,16 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* --- Run the drag & drop demo loop only while it is on screen --- */
+  var demo = document.querySelector('.flead-demo');
+  if (demo && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { demo.classList.toggle('is-playing', e.isIntersecting); });
+    }).observe(demo);
+  } else if (demo) {
+    demo.classList.add('is-playing');
+  }
+
   /* --- Put the visitor's own OS first and name it on the hero button --- */
   function detectOS() {
     var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') + ' ' + navigator.userAgent;

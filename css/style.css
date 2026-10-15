@@ -300,6 +300,67 @@ section { padding: 6rem 0; position: relative; }
 .fd-path i { font-style: normal; color: var(--muted); }
 .fd-cap { font-size: 0.8rem; color: var(--muted); padding: 0.1rem 0.2rem 0; }
 
+/* Lead demo: one item dragged from the list onto a folder, then its header
+   path updates. The page's single authored motion; paused off-screen. */
+.flead-demo { --ease: cubic-bezier(0.16, 1, 0.3, 1); }
+.fdemo {
+  --tree: 150px;
+  position: relative; display: grid; grid-template-columns: var(--tree) minmax(0, 1fr); gap: 12px;
+  padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  font-size: 0.8rem; color: var(--text-soft);
+}
+.fdemo-tree { display: flex; flex-direction: column; gap: 2px; }
+.fdemo-node { display: flex; align-items: center; gap: 0.4rem; height: 30px; padding: 0 0.5rem; border-radius: 7px; white-space: nowrap; }
+.fdemo-node svg { flex-shrink: 0; color: var(--brand-light); }
+.fdemo-node.child { padding-left: 1.5rem; }
+.fdemo-target { outline: 1px dashed transparent; animation: fd-target 7s var(--ease) infinite; }
+.fdemo-list { display: flex; flex-direction: column; gap: 6px; }
+.fdemo-slot, .fdemo-row, .fdemo-chip { height: 40px; border-radius: 9px; }
+.fdemo-slot { border: 1px dashed transparent; animation: fd-slot 7s var(--ease) infinite; }
+.fdemo-row, .fdemo-chip { display: flex; align-items: center; gap: 0.55rem; padding: 0 0.6rem; white-space: nowrap; overflow: hidden; }
+.fdemo-row { background: var(--surface); }
+.fdemo-row .mk-fav, .fdemo-chip .mk-fav { width: 22px; height: 22px; font-size: 0.72rem; border-radius: 6px; }
+.fdemo-chip {
+  position: absolute; top: 12px; left: calc(var(--tree) + 24px); width: calc(100% - var(--tree) - 36px);
+  background: var(--surface-3); border: 1px solid var(--brand-light); color: var(--text); font-weight: 550;
+  transform-origin: left center; animation: fd-chip 7s var(--ease) infinite;
+}
+.fd-swap { display: inline-grid; }
+.fd-swap > span { grid-area: 1 / 1; }
+.fd-from { animation: fd-from 7s var(--ease) infinite; }
+.fd-to { opacity: 0; color: #fff; animation: fd-to 7s var(--ease) infinite; }
+
+@keyframes fd-chip {
+  0%, 12% { transform: none; box-shadow: none; opacity: 1; }
+  22% { transform: translateY(-3px) scale(1.03); box-shadow: 0 14px 28px -12px var(--brand-glow); }
+  44% { transform: translate(calc(40px - var(--tree) - 24px), 58px) scale(0.62); box-shadow: 0 10px 22px -10px var(--brand-glow); opacity: 1; }
+  54% { transform: translate(calc(40px - var(--tree) - 24px), 60px) scale(0.5); opacity: 0; }
+  55%, 88% { transform: none; opacity: 0; box-shadow: none; }
+  96%, 100% { transform: none; opacity: 1; }
+}
+@keyframes fd-slot {
+  0%, 18% { border-color: transparent; }
+  26%, 84% { border-color: var(--border-strong); }
+  94%, 100% { border-color: transparent; }
+}
+@keyframes fd-target {
+  0%, 34% { background: transparent; outline-color: transparent; color: inherit; }
+  42%, 52% { background: rgba(23,93,220,0.2); outline-color: var(--brand-light); color: #fff; }
+  64%, 100% { background: transparent; outline-color: transparent; color: inherit; }
+}
+@keyframes fd-from { 0%, 54% { opacity: 1; } 58%, 90% { opacity: 0; } 96%, 100% { opacity: 1; } }
+@keyframes fd-to { 0%, 54% { opacity: 0; } 58%, 90% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+.js .flead-demo:not(.is-playing) * { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  /* No travel: show the finished move instead. */
+  .fdemo *, .fd-swap * { animation: none !important; }
+  .fdemo-chip { display: none; }
+  .fdemo-target { background: rgba(23,93,220,0.2); outline-color: var(--brand-light); color: #fff; }
+  .fd-from { opacity: 0; }
+  .fd-to { opacity: 1; }
+}
+
 /* The rest, grouped by what they're for: lists, not a wall of cards */
 .fgroups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.75rem; }
 .fgroup > h3 {
@@ -501,6 +562,8 @@ tbody td strong { color: #fff; }
 @media (max-width: 460px) {
   .hero-actions .btn { width: 100%; }
   .mockup-body { grid-template-columns: 128px minmax(0, 1fr); }
-  .mk-badge { display: none; }
+  .mk-badge-verb { display: none; }
+  .fdemo { --tree: 118px; gap: 8px; padding: 10px; }
+  .fdemo-chip { left: calc(var(--tree) + 18px); width: calc(100% - var(--tree) - 28px); }
   .footer-grid { grid-template-columns: 1fr; }
 }
