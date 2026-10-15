@@ -345,7 +345,7 @@ section { padding: 6rem 0; position: relative; }
 .fd-swap { display: inline-grid; }
 .fd-swap > span { grid-area: 1 / 1; }
 .fd-from { animation: fd-from 7s var(--ease) infinite; }
-.fd-to { opacity: 0; color: #fff; animation: fd-to 7s var(--ease) infinite; }
+.fd-to { opacity: 0; color: #fff; border-radius: 4px; padding: 0 0.2rem; margin: 0 -0.2rem; animation: fd-to 7s var(--ease) infinite; }
 
 /* 0-0.8 s rest · 0.8-3.1 s lift and carry · 3.1-3.8 s drop · 3.8-6.3 s hold the result · 6.3-7 s fade back to the start */
 @keyframes fd-chip {
@@ -359,16 +359,17 @@ section { padding: 6rem 0; position: relative; }
 @keyframes fd-cursor { 0%, 6% { opacity: 0; } 12%, 46% { opacity: 1; } 52%, 100% { opacity: 0; } }
 @keyframes fd-slot {
   0%, 18% { border-color: transparent; }
-  26%, 93% { border-color: var(--border-strong); }
-  94%, 100% { border-color: transparent; }
+  26%, 52% { border-color: var(--border-strong); }
+  60%, 100% { border-color: transparent; }
 }
 @keyframes fd-target {
   0%, 34% { background: transparent; outline-color: transparent; color: inherit; }
-  42%, 56% { background: rgba(23,93,220,0.2); outline-color: var(--brand-light); color: #fff; }
-  70%, 100% { background: transparent; outline-color: transparent; color: inherit; }
+  42%, 52% { background: rgba(23,93,220,0.24); outline-color: var(--brand-light); color: #fff; }
+  58%, 88% { background: rgba(23,93,220,0.2); outline-color: transparent; color: #fff; }
+  94%, 100% { background: transparent; outline-color: transparent; color: inherit; }
 }
 @keyframes fd-from { 0%, 54% { opacity: 1; } 58%, 93% { opacity: 0; } 94%, 100% { opacity: 1; } }
-@keyframes fd-to { 0%, 54% { opacity: 0; } 58%, 93% { opacity: 1; } 94%, 100% { opacity: 0; } }
+@keyframes fd-to { 0%, 54% { opacity: 0; background: transparent; } 58% { opacity: 1; background: rgba(23,93,220,0.35); } 70%, 93% { opacity: 1; background: transparent; } 94%, 100% { opacity: 0; } }
 @keyframes fd-reset { 0%, 88% { opacity: 1; } 92%, 95% { opacity: 0.3; } 100% { opacity: 1; } }
 
 .js .flead-demo:not(.is-playing) * { animation-play-state: paused; }
@@ -421,6 +422,8 @@ section { padding: 6rem 0; position: relative; }
 .code-card .ch .tl { display: flex; gap: 0.4rem; }
 .code-card .ch .tl span { width: 10px; height: 10px; border-radius: 50%; background: #2c3550; }
 .code-card .ch .fn { font-size: 0.76rem; color: var(--muted); margin-left: 0.4rem; font-family: var(--font-mono); }
+/* Block code is not a chip: no wash, no padding, no rounded bands per line. */
+pre code { background: none; padding: 0; border-radius: 0; color: var(--text-soft); font-size: inherit; }
 .code-card pre { padding: 1.2rem 1.3rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.75; }
 .code-card .cm { color: #7a87a4; }
 .code-card .kw { color: var(--brand-lighter); }
@@ -446,8 +449,11 @@ tbody td strong { color: #fff; }
 .ic-part { color: var(--text-soft); }
 .ic-unk { color: var(--muted); font-weight: 600; }
 td svg { display: inline-block; vertical-align: middle; }
-.fn-ref { font-size: 0.7rem; margin-left: 0.2rem; vertical-align: super; }
-.fn-ref a { color: var(--muted); }
+.fn-ref { font-size: 0.72rem; margin-left: 0.1rem; vertical-align: super; line-height: 0; }
+.fn-ref a { display: inline-block; min-width: 1.4rem; padding: 0.35rem 0.2rem; text-align: center; color: var(--brand-lighter); }
+.comp-notes { max-width: 72ch; margin: 1.3rem auto 0; padding-left: 1.2rem; font-size: 0.84rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.35rem; }
+.comp-notes a { text-decoration: underline; text-underline-offset: 2px; }
+.comp-notes li:target { color: var(--text); }
 .cell-note { margin-left: 0.4rem; font-size: 0.82rem; color: var(--muted); }
 .col-clavix-cell.is-lose { color: #f2d9a6; font-weight: 600; background: rgba(217,162,58,0.08); }
 .comp-note { text-align: center; max-width: 72ch; margin: 1.3rem auto 0; font-size: 0.84rem; color: var(--muted); }

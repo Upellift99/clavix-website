@@ -75,12 +75,21 @@
   var osNames = { linux: 'Linux', macos: 'macOS', windows: 'Windows' };
   var os = detectOS();
   var card = os && document.querySelector('.dl-card[data-card="' + os + '"]');
-  if (card) {
+  function markYours() {
     card.classList.add('is-yours');
     var badge = card.querySelector('.dl-yours');
     if (badge) badge.hidden = false;
     var heroLabel = document.getElementById('hero-dl-label');
     if (heroLabel) heroLabel.textContent = 'Download for ' + osNames[os];
+  }
+  // Linux and Windows builds are x86_64 only: an ARM machine gets no "Your system" tag.
+  var isArm = /aarch64|arm64|armv\d/i.test(navigator.userAgent);
+  if (card && !isArm && os !== 'macos' && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+    navigator.userAgentData.getHighEntropyValues(['architecture']).then(function (v) {
+      if (v.architecture !== 'arm') markYours();
+    }, markYours);
+  } else if (card && (!isArm || os === 'macos')) {
+    markYours();
   }
 
   /* --- Auto-resolve the latest release so download links never go stale --- */
