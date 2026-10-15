@@ -53,6 +53,26 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* --- Put the visitor's own OS first and name it on the hero button --- */
+  function detectOS() {
+    var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') + ' ' + navigator.userAgent;
+    if (/android|iphone|ipad|ipod/i.test(p)) return null; // phones get no desktop guess
+    if (/win/i.test(p)) return 'windows';
+    if (/mac/i.test(p)) return 'macos';
+    if (/linux|x11|cros/i.test(p)) return 'linux';
+    return null;
+  }
+  var osNames = { linux: 'Linux', macos: 'macOS', windows: 'Windows' };
+  var os = detectOS();
+  var card = os && document.querySelector('.dl-card[data-card="' + os + '"]');
+  if (card) {
+    card.classList.add('is-yours');
+    var badge = card.querySelector('.dl-yours');
+    if (badge) badge.hidden = false;
+    var heroLabel = document.getElementById('hero-dl-label');
+    if (heroLabel) heroLabel.textContent = 'Download for ' + osNames[os];
+  }
+
   /* --- Auto-resolve the latest release so download links never go stale --- */
   var repo = document.body.getAttribute('data-repo');
   var tagEl = document.getElementById('dl-tag');
