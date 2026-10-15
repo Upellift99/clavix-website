@@ -286,6 +286,9 @@ section { padding: 6rem 0; position: relative; }
   background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius);
   padding: 2.4rem; margin-bottom: 3.5rem;
 }
+.only-tag { display: inline-block; margin-bottom: 0.6rem; padding: 0.15rem 0.55rem; border-radius: 5px; font-size: 0.74rem; font-weight: 700; color: var(--brand-lighter); background: rgba(23,93,220,0.16); }
+.fgroups-intro { max-width: 70ch; margin: 0 0 2rem; color: var(--text-soft); }
+.fgroups-intro strong { color: var(--text); }
 .flead h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.75rem); font-weight: 750; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.9rem; }
 .flead p { color: var(--text-soft); max-width: 60ch; }
 .flead p + p { margin-top: 0.8rem; }
@@ -317,7 +320,7 @@ section { padding: 6rem 0; position: relative; }
 .fdemo-node.is-new { background: rgba(23,93,220,0.2); color: #fff; }
 .fdemo-node.is-moved { color: var(--text); }
 .fdemo {
-  --tree: 150px;
+  --tree: 150px; --off: 24px;
   position: relative; display: grid; grid-template-columns: var(--tree) minmax(0, 1fr); gap: 12px;
   padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
   font-size: 0.8rem; color: var(--text-soft);
@@ -335,7 +338,7 @@ section { padding: 6rem 0; position: relative; }
 .fdemo-node.is-sel { background: var(--surface-3); color: #fff; }
 .fdemo-row .mk-fav, .fdemo-chip .mk-fav { width: 22px; height: 22px; font-size: 0.72rem; border-radius: 6px; flex-shrink: 0; }
 .fdemo-chip {
-  position: absolute; top: 12px; left: calc(var(--tree) + 24px); width: calc(100% - var(--tree) - 36px);
+  position: absolute; top: 12px; left: calc(var(--tree) + var(--off)); width: calc(100% - var(--tree) - var(--off) - 12px);
   background: var(--surface-3); border: 1px solid var(--brand-light); color: var(--text); font-weight: 550;
   transform-origin: left center; animation: fd-chip 7s var(--ease) infinite;
 }
@@ -351,8 +354,8 @@ section { padding: 6rem 0; position: relative; }
 @keyframes fd-chip {
   0%, 12% { transform: none; box-shadow: none; opacity: 1; }
   22% { transform: translateY(-3px) scale(1.03); box-shadow: 0 14px 28px -12px var(--brand-glow); }
-  44% { transform: translate(calc(112px - var(--tree) - 24px), 58px) scale(0.62); box-shadow: 0 10px 22px -10px var(--brand-glow); opacity: 1; }
-  54% { transform: translate(calc(112px - var(--tree) - 24px), 60px) scale(0.5); opacity: 0; }
+  44% { transform: translate(calc(112px - var(--tree) - var(--off)), 58px) scale(0.62); box-shadow: 0 10px 22px -10px var(--brand-glow); opacity: 1; }
+  54% { transform: translate(calc(112px - var(--tree) - var(--off)), 60px) scale(0.5); opacity: 0; }
   55%, 93% { transform: none; opacity: 0; box-shadow: none; }
   94%, 100% { transform: none; opacity: 1; }
 }
@@ -424,7 +427,7 @@ section { padding: 6rem 0; position: relative; }
 .code-card .ch .fn { font-size: 0.76rem; color: var(--muted); margin-left: 0.4rem; font-family: var(--font-mono); }
 /* Block code is not a chip: no wash, no padding, no rounded bands per line. */
 pre code { background: none; padding: 0; border-radius: 0; color: var(--text-soft); font-size: inherit; }
-.code-card pre { padding: 1.2rem 1.3rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.75; }
+.code-card pre { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; padding: 1.2rem 1.3rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.75; }
 .code-card .cm { color: #7a87a4; }
 .code-card .kw { color: var(--brand-lighter); }
 .code-card .fn2 { color: var(--brand-light); }
@@ -617,6 +620,6 @@ td svg { display: inline-block; vertical-align: middle; }
   .mockup-body { grid-template-columns: 128px minmax(0, 1fr); }
   .mk-badge-verb { display: none; }
   .fdemo { --tree: 118px; gap: 8px; padding: 10px; }
-  .fdemo-chip { left: calc(var(--tree) + 18px); width: calc(100% - var(--tree) - 28px); }
+  .fdemo, .mockup .fdemo { --tree: 118px; --off: 18px; }
   .footer-grid { grid-template-columns: 1fr; }
 }
