@@ -29,7 +29,7 @@ The KeePassXC experience for a Vaultwarden vault: a real hierarchical tree built
 
 ## Capabilities and Constraints
 
-Product capabilities the site may claim (as of app v0.22.0): tree vault with drag & drop; item create/edit/delete incl. organizations; full 2FA (TOTP, YubiKey OTP, WebAuthn/FIDO2 over CTAP2/HID); YubiKey unlock (hmac-secret); embedded SSH agent (Unix socket on Linux/macOS, OpenSSH named pipe + Pageant on Windows); security audit (HIBP k-anonymity, reused/weak passwords); live TOTP and QR scanning; encrypted offline cache with read-only fallback; encrypted backups openable read-only without a server; password strength (entropy in the generator, zxcvbn elsewhere); KeePassXC import; tray and auto-lock; English and French UI. Works with self-hosted Vaultwarden and Bitwarden cloud (US/EU); SSH-key items on Vaultwarden need its experimental feature flag.
+Product capabilities the site may claim (as of app v0.24.0): tree vault with drag & drop; three-column layout on wide windows, with logins and notes edited in place; keyboard flow (search focused on open, Enter opens the first match, Ctrl+C copies the password); item create/edit/delete incl. organizations; full 2FA (TOTP, YubiKey OTP, WebAuthn/FIDO2 over CTAP2/HID); YubiKey unlock (hmac-secret); embedded SSH agent (Unix socket on Linux/macOS, OpenSSH named pipe + Pageant on Windows); security audit (HIBP k-anonymity, reused/weak passwords); live TOTP and QR scanning; encrypted offline cache with read-only fallback; encrypted backups openable read-only without a server; password strength (entropy in the generator, zxcvbn elsewhere); KeePassXC import (KDBX or CSV, a folder per Group); tray and auto-lock; English and French UI. Works with self-hosted Vaultwarden (primary target), self-hosted Bitwarden and Bitwarden cloud (US/EU); SSH-key items on Vaultwarden need its experimental feature flag.
 
 Site constraints:
 - Plain static HTML/CSS/JS, no build step, deployed by GitHub Pages via Actions from the repo root; custom domain clavix.org.
@@ -38,7 +38,7 @@ Site constraints:
 
 ## Brand Commitments
 
-- Name: Clavix. Existing logo, favicon and social card in `assets/`.
+- Name: Clavix. The mark is the seal (logo and favicon in `assets/`, copied from the app repo's `assets/clavix-logo.svg`); the social card is rendered from `.mockups/social-card.html`.
 - Voice: direct, technical, honest; speaks to people who know what Argon2id and `SSH_AUTH_SOCK` are.
 - The alpha status is shown openly and prominently — top banner, an "Honest status" note in the security section, and the FAQ, linking to the DISCLAIMER. This is a brand commitment, not a temporary embarrassment to minimise.
 - Must state that the crypto is unaudited and that part of the code was AI-assisted under human review.

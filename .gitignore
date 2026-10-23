@@ -1,0 +1,4 @@
+.mockups/*
+!.mockups/social-card.html
+.impeccable/review/
+.impeccable/questions/
