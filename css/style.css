@@ -475,7 +475,8 @@ h2 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 2.5rem); line-height: 1.12; letter
    Features: the deep-teal band
    =========================================================== */
 .features { background: var(--band); color: var(--band-ink); }
-.features .section-sub { color: var(--band-soft); }
+/* One sentence: let it run the width of the heading instead of breaking before its last words. */
+.features .section-sub { color: var(--band-soft); max-width: none; }
 .fgroups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
 .fgroup h3 {
   font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
@@ -547,11 +548,11 @@ td > svg, td > .ic { display: inline-block; vertical-align: middle; }
 .fn-ref { font-size: 0.75rem; margin-left: 0.1rem; vertical-align: super; line-height: 0; }
 .fn-ref a { display: inline-block; min-width: 1.4rem; padding: 0.35rem 0.2rem; text-align: center; }
 .comp-notes {
-  margin-top: 1.4rem; padding-left: 1.2rem; list-style: decimal; max-width: 80ch;
+  margin-top: 1.4rem; padding-left: 1.2rem; list-style: decimal;
   font-size: 0.8125rem; color: var(--muted); display: grid; gap: 0.35rem;
 }
 .comp-notes li:target { color: var(--ink); }
-.comp-note { margin-top: 1rem; max-width: 80ch; font-size: 0.8125rem; color: var(--muted); }
+.comp-note { margin-top: 1rem; font-size: 0.8125rem; color: var(--muted); }
 
 /* ===========================================================
    Download: the installer
