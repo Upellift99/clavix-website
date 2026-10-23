@@ -10,9 +10,9 @@ served by GitHub Pages from the repository root.
 
 ```
 index.html          # the whole page
-css/style.css        # dark "vault" theme, Bitwarden-blue accent
-js/main.js           # mobile nav, scroll reveal, latest-release fetch
-assets/              # logo, favicon, self-hosted Inter font, social card
+css/style.css        # the app's identity (seal, verdigris), light and dark
+js/main.js           # mobile nav, download tabs, latest-release fetch
+assets/              # seal logo, favicon, self-hosted Inter and Atkinson Hyperlegible, social card
 CNAME                # clavix.org
 ```
 
@@ -30,7 +30,8 @@ python3 -m http.server 8000
 ## Updating the social card
 
 `assets/social-card.png` (1200×630) is the Open Graph / Twitter preview image.
-Regenerate it if the tagline changes.
+Regenerate it if the tagline changes: its source is `.mockups/social-card.html`, rendered with
+`google-chrome --headless=new --hide-scrollbars --window-size=1200,630 --screenshot=assets/social-card.png <url of that file>`.
 
 ## License
 

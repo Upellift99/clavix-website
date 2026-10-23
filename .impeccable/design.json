@@ -1,301 +1,197 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T13:45:00Z",
+  "generatedAt": "2026-10-23T23:00:00Z",
   "title": "Design System: Clavix",
   "extensions": {
     "colorMeta": {
-      "vault-blue": {
-        "role": "primary",
-        "displayName": "Vault Blue",
-        "tonalRamp": [
-          "#0a2a66",
-          "#1148ad",
-          "#175ddc",
-          "#2f72e6",
-          "#4d8bf0",
-          "#6ea2f3",
-          "#8fb6f6",
-          "#c9dcfb"
-        ]
-      },
-      "vault-blue-light": {
-        "role": "primary",
-        "displayName": "Vault Blue Light"
-      },
-      "vault-blue-pale": {
-        "role": "primary",
-        "displayName": "Vault Blue Pale"
-      },
-      "vault-blue-deep": {
-        "role": "primary",
-        "displayName": "Vault Blue Deep"
-      },
-      "night-floor": {
-        "role": "neutral",
-        "displayName": "Night Floor",
-        "tonalRamp": [
-          "#070b16",
-          "#0b1222",
-          "#111a30",
-          "#16203a",
-          "#1d2a49",
-          "#5f6c89",
-          "#8593b0",
-          "#eef2fb"
-        ]
-      },
-      "night-shelf": {
-        "role": "neutral",
-        "displayName": "Night Shelf"
-      },
-      "drawer": {
-        "role": "neutral",
-        "displayName": "Drawer"
-      },
-      "drawer-raised": {
-        "role": "neutral",
-        "displayName": "Drawer Raised"
-      },
-      "drawer-lit": {
-        "role": "neutral",
-        "displayName": "Drawer Lit"
-      },
-      "frost-text": {
-        "role": "neutral",
-        "displayName": "Frost Text"
-      },
-      "frost-soft": {
-        "role": "neutral",
-        "displayName": "Frost Soft"
-      },
-      "slate-muted": {
-        "role": "neutral",
-        "displayName": "Slate Muted"
-      },
-      "slate-dim": {
-        "role": "neutral",
-        "displayName": "Slate Dim"
-      },
-      "border-hairline": {
-        "role": "neutral",
-        "displayName": "Hairline Border"
-      },
-      "border-strong": {
-        "role": "neutral",
-        "displayName": "Strong Border"
-      },
-      "signal-green": {
-        "role": "status",
-        "displayName": "Signal Green"
-      },
-      "warning-amber": {
-        "role": "status",
-        "displayName": "Warning Amber",
-        "tonalRamp": [
-          "#3d2c0c",
-          "#6b4d16",
-          "#9a6f21",
-          "#c38e2e",
-          "#d9a23a",
-          "#e4ba6a",
-          "#f2d9a6",
-          "#faefd9"
-        ]
-      },
-      "warning-amber-text": {
-        "role": "status",
-        "displayName": "Warning Cream"
-      },
-      "alert-red": {
-        "role": "status",
-        "displayName": "Alert Red"
-      }
+      "verdigris": { "role": "primary", "displayName": "Verdigris", "tonalRamp": ["#0b5c5e", "#0c6f71", "#0d7f81", "#0f8b8d", "#3fb3b1", "#7fd1cd", "#bfe9e4", "#e3f3f1"] },
+      "verdigris-fill": { "role": "primary", "displayName": "Verdigris Fill" },
+      "deep-teal": { "role": "primary", "displayName": "Deep Teal" },
+      "teal-link": { "role": "primary", "displayName": "Teal Link" },
+      "verdigris-lifted": { "role": "primary", "displayName": "Verdigris Lifted" },
+      "verdigris-pale": { "role": "primary", "displayName": "Verdigris Pale" },
+      "mint": { "role": "primary", "displayName": "Mint" },
+      "mint-wash": { "role": "primary", "displayName": "Mint Wash" },
+      "mint-selected": { "role": "primary", "displayName": "Mint Selected" },
+      "amber-ink": { "role": "tertiary", "displayName": "Amber Ink", "tonalRamp": ["#3a2f1a", "#5c4a26", "#7a4b00", "#a8711a", "#d49a3a", "#f0c070", "#f0d08a", "#fff4dc"] },
+      "amber-wash": { "role": "tertiary", "displayName": "Amber Wash" },
+      "amber-line": { "role": "tertiary", "displayName": "Amber Line" },
+      "success-green": { "role": "tertiary", "displayName": "Success Green" },
+      "status-fresh": { "role": "tertiary", "displayName": "Status Fresh" },
+      "cool-ground": { "role": "neutral", "displayName": "Cool Ground", "tonalRamp": ["#16191a", "#2e3538", "#4b5356", "#5f696d", "#c9cfcf", "#d8dcdc", "#eaeded", "#f4f6f6"] },
+      "paper": { "role": "neutral", "displayName": "Paper" },
+      "cool-pane": { "role": "neutral", "displayName": "Cool Pane" },
+      "cool-header": { "role": "neutral", "displayName": "Cool Header" },
+      "cool-inset": { "role": "neutral", "displayName": "Cool Inset" },
+      "cool-code": { "role": "neutral", "displayName": "Cool Code" },
+      "row-hover": { "role": "neutral", "displayName": "Row Hover" },
+      "ink": { "role": "neutral", "displayName": "Ink" },
+      "ink-secondary": { "role": "neutral", "displayName": "Ink Secondary" },
+      "ink-label": { "role": "neutral", "displayName": "Ink Label" },
+      "ink-muted": { "role": "neutral", "displayName": "Ink Muted" },
+      "hairline": { "role": "neutral", "displayName": "Hairline" },
+      "hairline-input": { "role": "neutral", "displayName": "Hairline Input" },
+      "hairline-soft": { "role": "neutral", "displayName": "Hairline Soft" },
+      "dark-ground": { "role": "neutral", "displayName": "Dark Ground", "tonalRamp": ["#171a1b", "#1c2122", "#1f2425", "#262c2d", "#30373a", "#343b3d", "#a9b3b6", "#eceff0"] },
+      "dark-paper": { "role": "neutral", "displayName": "Dark Paper" },
+      "dark-pane": { "role": "neutral", "displayName": "Dark Pane" },
+      "dark-header": { "role": "neutral", "displayName": "Dark Header" },
+      "dark-code": { "role": "neutral", "displayName": "Dark Code" },
+      "dark-row-hover": { "role": "neutral", "displayName": "Dark Row Hover" },
+      "dark-ink": { "role": "neutral", "displayName": "Dark Ink" },
+      "dark-ink-secondary": { "role": "neutral", "displayName": "Dark Ink Secondary" },
+      "dark-ink-label": { "role": "neutral", "displayName": "Dark Ink Label" },
+      "dark-ink-muted": { "role": "neutral", "displayName": "Dark Ink Muted" },
+      "dark-hairline": { "role": "neutral", "displayName": "Dark Hairline" },
+      "dark-hairline-input": { "role": "neutral", "displayName": "Dark Hairline Input" },
+      "dark-hairline-soft": { "role": "neutral", "displayName": "Dark Hairline Soft" },
+      "dark-accent-wash": { "role": "primary", "displayName": "Dark Accent Wash" },
+      "dark-accent-selected": { "role": "primary", "displayName": "Dark Accent Selected" },
+      "dark-amber-ink": { "role": "tertiary", "displayName": "Dark Amber Ink" },
+      "dark-amber-wash": { "role": "tertiary", "displayName": "Dark Amber Wash" },
+      "dark-amber-line": { "role": "tertiary", "displayName": "Dark Amber Line" },
+      "dark-success": { "role": "tertiary", "displayName": "Dark Success" }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Hero headline only; key phrase may carry a pale-to-vault-blue gradient."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Centered section titles under an eyebrow; CTA band title."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Card, download and security item headings."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Page default; leads larger in Frost Soft, card text slightly smaller."
-      },
-      "label": {
-        "displayName": "Eyebrow",
-        "purpose": "Uppercase section eyebrows in Vault Blue Light."
-      },
-      "mono": {
-        "displayName": "Mono",
-        "purpose": "Inline code chips, file formats, code card."
-      }
+      "display": { "displayName": "Display", "purpose": "The hero headline only; one phrase may take the display accent." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, balanced." },
+      "title": { "displayName": "Title", "purpose": "Step card titles." },
+      "title-small": { "displayName": "Title Small", "purpose": "Feature items, security proofs, FAQ questions." },
+      "lead": { "displayName": "Lead", "purpose": "The hero lead." },
+      "body": { "displayName": "Body", "purpose": "Running copy." },
+      "body-small": { "displayName": "Body Small", "purpose": "Card, feature and proof descriptions." },
+      "caption": { "displayName": "Caption", "purpose": "Figure captions, meta lines, footnotes." },
+      "label": { "displayName": "Label", "purpose": "Uppercase labels naming a figure, column, group or footer list; never a lead-in above a headline." },
+      "data": { "displayName": "Data", "purpose": "Commands, paths, formats, checksums, code, in Atkinson Hyperlegible." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "The Clavix wordmark beside the seal." }
     },
     "shadows": [
-      {
-        "name": "window-lift",
-        "value": "0 40px 80px -30px rgba(0,0,0,0.7)",
-        "purpose": "Hero app mockup (code card uses 0 30px 60px -30px rgba(0,0,0,0.8))."
-      },
-      {
-        "name": "blue-glow",
-        "value": "0 8px 24px -8px rgba(23,93,220,0.45)",
-        "purpose": "Primary button at rest; hover 0 14px 34px -10px."
-      },
-      {
-        "name": "hover-lift",
-        "value": "0 18px 40px -24px rgba(0,0,0,0.8)",
-        "purpose": "Download cards on hover, with translateY(-3px)."
-      }
+      { "name": "mock-toast", "value": "0 4px 14px var(--toast-shadow)", "purpose": "Clipboard toast inside the depicted app window only." },
+      { "name": "mock-search-halo", "value": "0 0 0 2px rgba(15, 139, 141, 0.22)", "purpose": "Focused search field inside the depicted app window only." },
+      { "name": "mock-sync-halo", "value": "0 0 0 2px rgba(34, 197, 94, 0.2)", "purpose": "The Synced status dot inside the depicted app window only." }
     ],
     "motion": [
-      {
-        "name": "hover-fast",
-        "value": "transform .12s, background .18s, border-color .18s, box-shadow .18s, color .18s",
-        "purpose": "Buttons and links."
-      },
-      {
-        "name": "card-hover",
-        "value": "border-color .2s, transform .2s, box-shadow .2s",
-        "purpose": "Download cards."
-      },
-      {
-        "name": "reveal",
-        "value": "opacity .6s ease, transform .6s ease (from translateY(18px))",
-        "purpose": "One-time scroll reveal, only under html.js so content stays visible without JavaScript; disabled under prefers-reduced-motion."
-      }
+      { "name": "control-colour", "value": "background-color 0.12s, border-color 0.12s, color 0.12s", "purpose": "Button state changes; colour only, no movement." },
+      { "name": "disclosure-chevron", "value": "transform 0.15s ease-out", "purpose": "FAQ chevron rotating 180 degrees when open." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Disables smooth scrolling, transitions and animations." }
     ],
     "breakpoints": [
-      {
-        "name": "tablet",
-        "value": "980px"
-      },
-      {
-        "name": "mobile",
-        "value": "720px"
-      },
-      {
-        "name": "small",
-        "value": "460px"
-      }
+      { "name": "wide", "value": "1100px" },
+      { "name": "tablet", "value": "960px" },
+      { "name": "small", "value": "720px" },
+      { "name": "phone", "value": "480px" }
     ]
   },
   "components": [
     {
       "name": "Primary Button",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Main call to action (download).",
-      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Download for desktop</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.5rem; border-radius: 10px; font: 650 1rem Inter, system-ui, sans-serif; border: 1px solid transparent; text-decoration: none; transition: transform .12s, background .18s, border-color .18s, box-shadow .18s, color .18s; } .ds-btn:hover { transform: translateY(-2px); } .ds-btn:active { transform: none; } .ds-btn:focus-visible { outline: 2px solid #4d8bf0; outline-offset: 3px; } .ds-btn-primary { background: linear-gradient(180deg, #4d8bf0, #175ddc); color: #fff; box-shadow: 0 8px 24px -8px rgba(23,93,220,.45); } .ds-btn-primary:hover { box-shadow: 0 14px 34px -10px rgba(23,93,220,.45); }"
+      "refersTo": "button-primary-large",
+      "description": "The download action; white text on the deeper verdigris fill, deep teal on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Download for Linux <small>· AppImage</small></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 3rem; padding: 0.75rem 1.35rem; border-radius: 8px; border: 1px solid transparent; font: 600 1rem/1.2 Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; text-decoration: none; cursor: pointer; transition: background-color 0.12s, border-color 0.12s, color 0.12s; } .ds-btn-primary { background: #0d7f81; border-color: #0d7f81; color: #fff; } .ds-btn-primary small { font-weight: 500; font-size: 0.875rem; opacity: 0.92; } .ds-btn-primary:hover { background: #0b5c5e; border-color: #0b5c5e; } .ds-btn:focus-visible { outline: 2px solid #0f8b8d; outline-offset: 2px; }"
     },
     {
-      "name": "Ghost Button",
+      "name": "Secondary Button",
       "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Secondary action (view source).",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">View source</a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; padding: .8rem 1.5rem; border-radius: 10px; font: 650 1rem Inter, system-ui, sans-serif; text-decoration: none; background: rgba(143,170,220,.06); border: 1px solid rgba(143,170,220,.28); color: #eef2fb; transition: transform .12s, background .18s, border-color .18s, color .18s; } .ds-btn-ghost:hover { transform: translateY(-2px); background: rgba(143,170,220,.12); color: #fff; border-color: #4d8bf0; } .ds-btn-ghost:focus-visible { outline: 2px solid #4d8bf0; outline-offset: 3px; }"
+      "refersTo": "button-secondary",
+      "description": "Paper button with a control hairline, always beside a primary.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">View source</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; min-height: 3rem; padding: 0.75rem 1.35rem; border-radius: 8px; background: #ffffff; border: 1px solid #c9cfcf; color: #16191a; font: 600 1rem/1.2 Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; text-decoration: none; transition: background-color 0.12s; } .ds-btn-secondary:hover { background: #eef3f3; } .ds-btn-secondary:focus-visible { outline: 2px solid #0f8b8d; outline-offset: 2px; }"
     },
     {
-      "name": "Navigation",
+      "name": "Header Navigation",
       "kind": "nav",
-      "description": "Sticky translucent header with logo, links and a small primary button.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\">Clav<span>ix</span></a><div class=\"ds-links\"><a href=\"#\">Features</a><a href=\"#\">Security</a><a href=\"#\">FAQ</a><a class=\"ds-nav-btn\" href=\"#\">Download</a></div></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 1.5rem; background: rgba(7,11,22,.78); backdrop-filter: blur(14px) saturate(140%); border-bottom: 1px solid rgba(143,170,220,.14); font-family: Inter, system-ui, sans-serif; } .ds-logo { font-size: 1.2rem; font-weight: 750; letter-spacing: -.02em; color: #eef2fb; text-decoration: none; } .ds-logo span { color: #4d8bf0; } .ds-links { display: flex; align-items: center; gap: 1.6rem; } .ds-links a { color: #c2cce0; font-size: .95rem; font-weight: 500; text-decoration: none; } .ds-links a:hover { color: #fff; } .ds-links .ds-nav-btn { padding: .5rem 1rem; border-radius: 9px; background: linear-gradient(180deg, #4d8bf0, #175ddc); color: #fff; font-weight: 650; }"
+      "refersTo": "header",
+      "description": "Sticky ground-coloured header: seal and wordmark, quiet links, active section underlined in teal, small Download button.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#0f8b8d\"/><path d=\"M15.5 8.5a4.5 4.5 0 1 0 0 7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\"/></svg><span>Clavix</span></a><div class=\"ds-links\"><a href=\"#\">Migrate</a><a href=\"#\" class=\"is-active\">Features</a><a href=\"#\">Security</a><a href=\"#\" class=\"ds-nav-btn\">Download</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 1.5rem; height: 64px; padding: 0 1.5rem; background: #f4f6f6; border-bottom: 1px solid #d8dcdc; font-family: Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-logo { display: inline-flex; align-items: center; gap: 0.6rem; margin-right: auto; color: #16191a; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; } .ds-links { display: flex; align-items: center; gap: 1.6rem; } .ds-links a { color: #2e3538; text-decoration: none; font-size: 0.94rem; font-weight: 500; } .ds-links a:hover, .ds-links a.is-active { color: #0c6f71; } .ds-links a.is-active { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 2px; } .ds-links a.ds-nav-btn { background: #0d7f81; color: #fff; border-radius: 6px; padding: 0.4rem 0.9rem; font-weight: 600; } .ds-links a.ds-nav-btn:hover { background: #0b5c5e; color: #fff; } .ds-links a:focus-visible { outline: 2px solid #0f8b8d; outline-offset: 2px; border-radius: 4px; }"
     },
     {
-      "name": "Inline Code Chip",
-      "kind": "chip",
-      "refersTo": "inline-code",
-      "description": "Every path, command, variable and file format.",
-      "html": "<p class=\"ds-p\">Set <code class=\"ds-code\">SSH_AUTH_SOCK</code> in <code class=\"ds-code\">~/.bashrc</code>.</p>",
-      "css": ".ds-p { color: #c2cce0; font: 400 .96rem/1.7 Inter, system-ui, sans-serif; } .ds-code { font-family: 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace; font-size: .88em; background: rgba(143,170,220,.12); color: #8fb6f6; padding: .12em .42em; border-radius: 5px; }"
-    },
-    {
-      "name": "Feature Group",
+      "name": "Alpha Bar",
       "kind": "custom",
-      "refersTo": "feature-lead",
-      "description": "Titled list of features with hairline dividers and inline icons; replaces the icon-card grid.",
-      "html": "<div class=\"ds-fgroup\"><h3>Sign-in &amp; keys</h3><div class=\"ds-fitem\"><h4><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg> Embedded SSH agent</h4><p>Serves your vault's keys to <code>ssh</code> <span class=\"ds-tag\">without writing them to disk</span>.</p></div><div class=\"ds-fitem\"><h4>YubiKey unlock</h4><p>Touch a registered FIDO2 key instead of retyping your password.</p></div></div>",
-      "css": ".ds-fgroup { font-family: Inter, system-ui, sans-serif; max-width: 360px; } .ds-fgroup h3 { color: #eef2fb; font-size: 1.05rem; font-weight: 700; margin: 0; padding-bottom: .85rem; border-bottom: 1px solid rgba(143,170,220,.28); } .ds-fitem { padding: 1.15rem 0; border-bottom: 1px solid rgba(143,170,220,.14); } .ds-fitem:last-child { border-bottom: none; } .ds-fitem h4 { display: flex; align-items: flex-start; gap: .55rem; color: #eef2fb; font-size: 1rem; font-weight: 650; margin: 0 0 .35rem; } .ds-fitem h4 svg { color: #4d8bf0; flex-shrink: 0; } .ds-fitem p { color: #c2cce0; font-size: .93rem; line-height: 1.6; margin: 0; } .ds-fitem code { font-family: 'JetBrains Mono', monospace; font-size: .88em; background: rgba(143,170,220,.12); color: #8fb6f6; padding: .12em .42em; border-radius: 5px; } .ds-tag { color: #8fb6f6; font-weight: 600; }"
+      "refersTo": "alpha-bar",
+      "description": "Full-width amber strip above the header stating the alpha status.",
+      "html": "<p class=\"ds-alpha\"><strong>Alpha software.</strong> The crypto hasn't been independently audited. <a href=\"#\">Read the disclaimer</a></p>",
+      "css": ".ds-alpha { margin: 0; background: #fff4dc; color: #7a4b00; border-bottom: 1px solid #f0d08a; font: 0.875rem/1.55 Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; text-align: center; padding: 0.55rem 2rem; } .ds-alpha a { color: #7a4b00; font-weight: 600; text-underline-offset: 3px; } .ds-alpha a:hover { text-decoration-thickness: 2px; } .ds-alpha a:focus-visible { outline: 2px solid #0f8b8d; outline-offset: 2px; }"
     },
     {
-      "name": "Honest Status Note",
+      "name": "Step Card",
+      "kind": "card",
+      "refersTo": "step-card",
+      "description": "Paper card with a mint step number, title, copy, and a hairline-ruled visual row at the bottom.",
+      "html": "<article class=\"ds-step\"><span class=\"ds-num\">1</span><h3>Import your KDBX or CSV</h3><p>Each KeePassXC group becomes a folder.</p><div class=\"ds-vis\"><span class=\"ds-chip\">Servers/Homelab</span></div></article>",
+      "css": ".ds-step { max-width: 340px; background: #ffffff; border: 1px solid #d8dcdc; border-radius: 10px; padding: 1.6rem 1.6rem 1.5rem; font-family: Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #16191a; } .ds-num { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; align-items: center; justify-content: center; background: #e3f3f1; color: #0b5c5e; font-weight: 700; margin-bottom: 1rem; } .ds-step h3 { margin: 0 0 0.5rem; font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.01em; font-weight: 600; } .ds-step p { margin: 0; font-size: 0.9375rem; color: #2e3538; } .ds-vis { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid #d8dcdc; font-size: 0.8125rem; } .ds-chip { font-family: 'Atkinson Hyperlegible', Inter, sans-serif; background: #e6eaea; border-radius: 4px; padding: 0.1rem 0.45rem; }"
+    },
+    {
+      "name": "Feature Band Item",
       "kind": "custom",
-      "refersTo": "warning-note",
-      "description": "Amber note stating maturity and risk; amber is used only for this kind of message.",
-      "html": "<div class=\"ds-note\"><strong>Honest status:</strong> Clavix is alpha. The cryptography has not been independently audited.</div>",
-      "css": ".ds-note { padding: 1rem 1.15rem; border-radius: 11px; background: rgba(217,162,58,.08); border: 1px solid rgba(217,162,58,.26); color: #e7d3a8; font: 400 .88rem/1.6 Inter, system-ui, sans-serif; } .ds-note strong { color: #d9a23a; }"
+      "refersTo": "feature-band",
+      "description": "A feature group on the constant deep-teal band: mint uppercase group heading, white item title, mint-selected copy.",
+      "html": "<div class=\"ds-band\"><h3>Sign-in &amp; keys</h3><h4>Full 2FA, including WebAuthn</h4><p>TOTP, YubiKey OTP and FIDO2 over <code>CTAP2</code>.</p></div>",
+      "css": ".ds-band { background: #0b5c5e; color: #ffffff; padding: 2rem; max-width: 380px; font-family: Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-band h3 { margin: 0 0 1.25rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #bfe9e4; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(191, 233, 228, 0.28); } .ds-band h4 { margin: 0 0 0.3rem; font-size: 1.0625rem; font-weight: 600; line-height: 1.35; } .ds-band p { margin: 0; font-size: 0.9375rem; color: #d4ecea; } .ds-band code { font-family: 'Atkinson Hyperlegible', Inter, sans-serif; background: rgba(255, 255, 255, 0.1); border-radius: 3px; padding: 0.05em 0.35em; }"
+    },
+    {
+      "name": "OS Tabs and Download Card",
+      "kind": "custom",
+      "refersTo": "os-tab-selected",
+      "description": "Tabs on the deep-teal installer; the selected tab turns paper and joins the card, the recommended package sits in mint wash.",
+      "html": "<div class=\"ds-inst\"><div class=\"ds-tabs\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">Linux</button><button role=\"tab\" aria-selected=\"false\">macOS</button><button role=\"tab\" aria-selected=\"false\">Windows</button></div><div class=\"ds-card\"><a class=\"ds-pkg ds-main\" href=\"#\"><b>AppImage</b><span>Runs on any x86_64 distro</span></a><a class=\"ds-pkg\" href=\"#\"><b>.deb</b><span>Debian, Ubuntu</span></a></div></div>",
+      "css": ".ds-inst { background: #0b5c5e; border-radius: 10px; padding: 1.75rem; max-width: 520px; font-family: Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-tabs { display: flex; gap: 0.3rem; border-bottom: 1px solid rgba(191, 233, 228, 0.28); } .ds-tabs button { padding: 0.7rem 1.1rem; margin-bottom: -1px; background: none; color: #d4ecea; border: 1px solid transparent; border-bottom: 0; border-radius: 8px 8px 0 0; font: 600 1rem/1.2 inherit; font-family: inherit; cursor: pointer; } .ds-tabs button:hover { color: #ffffff; } .ds-tabs button[aria-selected=\"true\"] { background: #ffffff; color: #16191a; border-color: #ffffff; } .ds-tabs button:focus-visible { outline: 2px solid #bfe9e4; outline-offset: -3px; } .ds-card { background: #ffffff; color: #16191a; border-radius: 0 8px 8px 8px; padding: 0.75rem 1.25rem 1.25rem; } .ds-pkg { display: flex; gap: 0.8rem; align-items: baseline; padding: 0.85rem 0.6rem; margin: 0 -0.6rem; border-radius: 6px; color: #16191a; text-decoration: none; border-bottom: 1px solid #e6eaea; } .ds-pkg span { font-size: 0.875rem; color: #5f696d; } .ds-pkg:hover { background: #eef3f3; } .ds-pkg.ds-main { background: #e3f3f1; border-bottom-color: transparent; } .ds-pkg.ds-main b { color: #0b5c5e; } .ds-pkg.ds-main:hover { background: #d4ecea; }"
+    },
+    {
+      "name": "Command Chip",
+      "kind": "input",
+      "refersTo": "command-chip",
+      "description": "Inset well holding a copyable command in Atkinson Hyperlegible with a paper copy button.",
+      "html": "<div class=\"ds-cmd\"><code><span class=\"ds-ps\">$</span> chmod +x Clavix_*.AppImage</code><button class=\"ds-copy\" type=\"button\">Copy</button></div>",
+      "css": ".ds-cmd { display: flex; align-items: center; gap: 0.75rem; max-width: 440px; background: #eef1f1; border: 1px solid #d8dcdc; border-radius: 6px; padding: 0.45rem 0.5rem 0.45rem 0.85rem; } .ds-cmd code { flex: 1; min-width: 0; font-family: 'Atkinson Hyperlegible', Inter, sans-serif; font-size: 0.875rem; color: #16191a; white-space: nowrap; overflow-x: auto; } .ds-ps { color: #5f696d; user-select: none; } .ds-copy { flex: none; font: 500 0.8125rem/1 Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #0c6f71; background: #ffffff; border: 1px solid #c9cfcf; border-radius: 6px; padding: 0.4rem 0.65rem; cursor: pointer; } .ds-copy:hover { background: #eef3f3; } .ds-copy:focus-visible { outline: 2px solid #0f8b8d; outline-offset: 2px; }"
     },
     {
       "name": "FAQ Item",
       "kind": "custom",
-      "refersTo": "faq-item",
-      "description": "Native details/summary disclosure with rotating chevron.",
-      "html": "<details class=\"ds-faq\" open><summary>Which platforms are supported? <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"6 9 12 15 18 9\"/></svg></summary><div class=\"ds-faq-a\">Linux, macOS and Windows.</div></details>",
-      "css": ".ds-faq { border: 1px solid rgba(143,170,220,.14); border-radius: 11px; background: #111a30; font-family: Inter, system-ui, sans-serif; } .ds-faq[open] { border-color: rgba(143,170,220,.28); } .ds-faq summary { display: flex; justify-content: space-between; align-items: center; padding: 1.15rem 1.3rem; cursor: pointer; list-style: none; font-weight: 600; font-size: 1.02rem; color: #eef2fb; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary svg { color: #8593b0; transition: transform .25s; } .ds-faq[open] summary svg { transform: rotate(180deg); color: #4d8bf0; } .ds-faq summary:focus-visible { outline: 2px solid #4d8bf0; outline-offset: 3px; } .ds-faq-a { padding: 0 1.3rem 1.25rem; color: #c2cce0; font-size: .96rem; line-height: 1.7; }"
+      "refersTo": "faq-question",
+      "description": "Native disclosure between hairlines; chevron rotates and turns teal when open.",
+      "html": "<details class=\"ds-faq\" open><summary>Is it safe to use with my real vault? <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><polyline points=\"6 9 12 15 18 9\"/></svg></summary><p>Not yet. Clavix is alpha and its crypto is unaudited.</p></details>",
+      "css": ".ds-faq { max-width: 560px; border-top: 1px solid #d8dcdc; border-bottom: 1px solid #d8dcdc; font-family: Inter, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #16191a; } .ds-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 0.25rem; cursor: pointer; font-weight: 600; font-size: 1.0625rem; list-style: none; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary:hover { color: #0c6f71; } .ds-faq summary:focus-visible { outline: 2px solid #0f8b8d; outline-offset: 2px; } .ds-faq svg { flex: none; color: #5f696d; transition: transform 0.15s ease-out; } .ds-faq[open] svg { transform: rotate(180deg); color: #0c6f71; } .ds-faq p { margin: 0; padding: 0 0.25rem 1.3rem; color: #2e3538; font-size: 0.97rem; line-height: 1.7; }"
     }
   ],
   "narrative": {
-    "northStar": "The Vault Room",
-    "overview": "The site is a dark room of stacked drawers. The floor is near-black navy, and every surface placed on it is one shade lighter than the thing beneath it, the way a drawer pulled from a safe catches more light than the wall behind it. A single blue light, Bitwarden's own blue, moves through the room and tells the eye where to go: the primary button, a link, the column that is Clavix in a comparison table, the folder an item is being dropped into.\n\nIt speaks to self-hosters as peers, so precision is part of the look: inline code chips for paths and environment variables, a mock Rust file, a real comparison table, an app window drawn in CSS rather than a glossy screenshot. Density is moderate: generous section rhythm, compact and information-rich cards.\n\nOne deliberate exception breaks the blue monochrome: amber. It is reserved for telling the truth about the product's maturity, and its scarcity is what makes the alpha warning readable at a glance.",
+    "northStar": "The App, Set on the Table",
+    "overview": "clavix.org is the Persuade surface of the Clavix family. It does not invent a marketing identity: it takes the desktop app's own world (cool grey-green neutrals, a single verdigris accent family, the seal mark, Inter for interface and display, Atkinson Hyperlegible for anything that is an identifier) and lays the product itself out on the page. The hero's proof is not a glossy screenshot but a hand-built HTML depiction of the app's three-column window beside a neutral KeePassXC-like tree, the same groups before and after. Every other section reads as calm, hairline-ruled documentation for peers who self-host.\n\nDensity is moderate: a generous section rhythm, a 1200px content width, flat surfaces separated by 1px hairlines rather than shadows. Beyond the neutrals the page has exactly two committed colour moments: the deep-teal band (the features section and the installer panel), which stays deep teal in both themes, and amber, which appears only where the page tells the truth about immaturity or limits. Light and dark follow the visitor's system through `prefers-color-scheme`; both themes share one token list with different values.\n\nThe site deviates from the app's tokens in three small, deliberate places where a marketing page has different legibility demands: fills that carry white text use a half-step deeper verdigris, muted text is one step darker, and the type scale grows to a true display size. These deviations are recorded below and are not drift.",
     "keyCharacteristics": [
-      "Dark navy only; there is no light theme.",
-      "Depth by tonal layering of surfaces; shadows are rare and purposeful.",
-      "One accent hue (vault blue) in four steps; amber only for warnings; green only for \"yes\".",
-      "Inter variable, self-hosted, with heavy weights and tight tracking for headings.",
-      "Technical texture: monospace chips, code card, CSS-drawn app window."
+      "The app's own palette and mark, unchanged in hue; the page is a member of the family, not a reskin.",
+      "The product shown as live HTML mock windows, never as a raster screenshot.",
+      "Flat surfaces, 1px hairlines, radii from 3px to 10px.",
+      "One deep-teal band surface, identical in light and dark.",
+      "Amber is reserved for honesty: alpha status, unaudited crypto, unsigned builds, places where Clavix loses.",
+      "Inter for words, Atkinson Hyperlegible for paths, commands, file formats, checksums and code."
     ],
     "rules": [
-      {
-        "name": "The One Light Rule",
-        "body": "Vault blue is the only accent hue. A new element earns emphasis through blue at the right step or alpha, never through a new color.",
-        "section": "colors"
-      },
-      {
-        "name": "The Honest Amber Rule",
-        "body": "Amber means \"this is a limit or a risk you should know about.\" It is never decorative, never a second brand color, and never used for a call to action.",
-        "section": "colors"
-      },
-      {
-        "name": "The Weight, Not Size Rule",
-        "body": "Hierarchy comes from Inter's weight axis (400 → 650 → 750 → 800) and tracking as much as from size. Keep intermediate weights (550, 650, 750) rather than snapping to 500/600/700.",
-        "section": "typography"
-      },
-      {
-        "name": "The Self-Hosted Rule",
-        "body": "Fonts are served from the site itself; no font CDN, in keeping with the no-third-party-requests promise.",
-        "section": "typography"
-      },
-      {
-        "name": "The Drawer Rule",
-        "body": "To raise something, make its surface one tonal step lighter and give it a hairline border. Reach for a shadow only for a window-like object or a hover response.",
-        "section": "elevation"
-      }
+      { "name": "The One Hue Rule", "body": "Verdigris and its derived teals and mints are the only accent. No second brand hue, no gradients.", "section": "colors" },
+      { "name": "The White-on-Fill Rule", "body": "Any fill carrying white text uses Verdigris Fill or Deep Teal, never pure Verdigris.", "section": "colors" },
+      { "name": "The Amber Is Truth Rule", "body": "Amber appears only where the page states a limitation: alpha status, unaudited or unsigned builds, a comparison row Clavix loses. Never as decoration or emphasis.", "section": "colors" },
+      { "name": "The Constant Band Rule", "body": "The deep-teal band is deep teal in both themes; it is the one surface that does not flip with the colour scheme.", "section": "colors" },
+      { "name": "The Identifier Rule", "body": "If a visitor could copy it, type it, or compare it against a hash, it is set in Atkinson Hyperlegible.", "section": "typography" },
+      { "name": "The Label-Names-a-Thing Rule", "body": "Uppercase tracked labels name the figure, column, group or list they sit on. They never float above a section headline as a decorative lead-in.", "section": "typography" },
+      { "name": "The Flat Page Rule", "body": "Page surfaces never cast shadows; a shadow on the page means it belongs to a depicted app window.", "section": "elevation" }
     ],
     "dos": [
-      "Do build depth with the navy surface ladder and hairline borders before reaching for a shadow.",
-      "Do use vault blue at different steps and alphas for every emphasis: links, active states, highlighted columns, icon wells.",
-      "Do put every path, command, environment variable and file format in a monospace chip.",
-      "Do keep amber for maturity, limits and risks: the alpha banner, honest-status notes, the alpha chip, unsigned-build notes, \"partial\" marks.",
-      "Do draw product visuals in HTML/CSS like the app mockup, so they stay sharp and on-palette.",
-      "Do respect prefers-reduced-motion; motion is limited to short hover lifts, the FAQ chevron and a one-time scroll reveal.",
-      "Do keep everything visible without JavaScript: the scroll reveal only hides elements under html.js."
+      "Do take every colour, radius and typeface from the app's world; deviate only for contrast or display scale, and record the deviation here.",
+      "Do put white text on Verdigris Fill (#0d7f81) or Deep Teal only.",
+      "Do depict the product as live HTML in its real layout, with neutral greys for any competitor depiction.",
+      "Do set commands, paths, formats and checksums in Atkinson Hyperlegible.",
+      "Do separate surfaces with 1px hairlines and tonal steps; keep radii between 3px and 10px.",
+      "Do keep the deep-teal band deep teal in both themes, and give every other token a dark value in the same list.",
+      "Do keep the page working without JavaScript (tabs become stacked cards, the nav wraps, copy buttons hide)."
     ],
     "donts": [
-      "Don't introduce a light theme section or a second accent hue (that includes violet in gradients or code highlighting).",
-      "Don't use amber decoratively or for calls to action.",
-      "Don't load fonts, scripts or images from third-party hosts.",
-      "Don't add heavy drop shadows to flat content blocks; shadows belong to windows, the primary button and hover states.",
-      "Don't use pure white for body text; it is reserved for strong and hover.",
-      "Don't return to a grid of same-size icon cards for features."
+      "Don't introduce a second accent hue or gradients.",
+      "Don't use amber for anything but stated limitations.",
+      "Don't cast shadows from page surfaces; shadows belong to depicted app windows only.",
+      "Don't place uppercase tracked labels above section headlines as lead-ins; labels name the figure, column or group they sit on.",
+      "Don't use pure Verdigris under white text or for small text on the light ground.",
+      "Don't load fonts or assets from third parties; fonts are self-hosted."
     ]
   }
 }

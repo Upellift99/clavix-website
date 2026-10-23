@@ -40,30 +40,7 @@
     sections.forEach(function (s) { navObs.observe(s); });
   }
 
-  /* --- Reveal on scroll --- */
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && reveals.length) {
-    var revObs = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
-    reveals.forEach(function (el) { revObs.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add('in'); });
-  }
-
-  /* --- Run the drag & drop demo loop only while it is on screen --- */
-  var demo = document.querySelector('.flead-demo');
-  if (demo && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { demo.classList.toggle('is-playing', e.isIntersecting); });
-    }).observe(demo);
-  } else if (demo) {
-    demo.classList.add('is-playing');
-  }
-
-  /* --- Put the visitor's own OS first and name it on the hero button --- */
+  /* --- Which desktop OS is the visitor on? --- */
   function detectOS() {
     var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') + ' ' + navigator.userAgent;
     if (/android|iphone|ipad|ipod/i.test(p)) return null; // phones get no desktop guess
@@ -73,14 +50,47 @@
     return null;
   }
   var osNames = { linux: 'Linux', macos: 'macOS', windows: 'Windows' };
+
+  /* --- Download tabs: one panel per OS, arrow keys move between tabs --- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.dl-tab'));
+  function selectTab(os, focus) {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-os') === os;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !on;
+      if (on && focus) t.focus();
+    });
+  }
+  if (tabs.length) {
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { selectTab(t.getAttribute('data-os')); });
+      t.addEventListener('keydown', function (e) {
+        var next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') next = tabs[0];
+        else if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); selectTab(next.getAttribute('data-os'), true); }
+      });
+    });
+    selectTab('linux');
+  }
+
+  /* --- Put the visitor's own OS first and name it on the hero button --- */
   var os = detectOS();
   var card = os && document.querySelector('.dl-card[data-card="' + os + '"]');
   function markYours() {
-    card.classList.add('is-yours');
-    var badge = card.querySelector('.dl-yours');
+    var tab = document.querySelector('.dl-tab[data-os="' + os + '"]');
+    var badge = tab && tab.querySelector('.dl-yours');
     if (badge) badge.hidden = false;
+    selectTab(os);
     var heroLabel = document.getElementById('hero-dl-label');
     if (heroLabel) heroLabel.textContent = 'Download for ' + osNames[os];
+    var heroPkg = document.getElementById('hero-dl-pkg');
+    var pkg = card.querySelector('.dl-main .dl-name');
+    if (heroPkg && pkg) { heroPkg.textContent = '· ' + pkg.textContent; heroPkg.hidden = false; }
   }
   // Linux and Windows builds are x86_64 only: an ARM machine gets no "Your system" tag.
   var isArm = /aarch64|arm64|armv\d/i.test(navigator.userAgent);
@@ -91,6 +101,18 @@
   } else if (card && (!isArm || os === 'macos')) {
     markYours();
   }
+
+  /* --- Copy buttons on the command chips --- */
+  document.querySelectorAll('.copy[data-copy]').forEach(function (btn) {
+    if (!navigator.clipboard || !window.isSecureContext) { btn.hidden = true; return; }
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+      }, function () { /* clipboard refused: the command stays selectable */ });
+    });
+    btn.setAttribute('aria-live', 'polite');
+  });
 
   /* --- Auto-resolve the latest release so download links never go stale --- */
   var repo = document.body.getAttribute('data-repo');
